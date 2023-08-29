@@ -15,8 +15,6 @@
     <string name="HaveAccount">I already have an account</string>
     <string name="creating_your_account">Creating your account…</string>
 
-    <!--    MAIN MENU-->
-    <string name="SignOut">Sign out</string>
 
     <!--    LOGIN ACTIVITY-->
     <string name="LogInTXT">Log In</string>
@@ -26,10 +24,18 @@
     <string name="NewUserTXT">You do not have an account? Sign up</string>
     <string name="logging_in">Logging in…</string>
 
-    <!--MAIN-->
+    <!--MAIN MENU-->
     <string name="WelcomeMainMenu">Welcome</string>
+    <string name="UidMain"> -- </string>
     <string name="NamesMain"> -- </string>
     <string name="MailMain"> -- </string>
+
+    <string name="AddNotes">Add</string>
+    <string name="ListNotes">Notes</string>
+    <string name="Archived">Archived</string>
+    <string name="Profile">Profile</string>
+    <string name="About">About</string>
+    <string name="SignOut">Sign out</string>
 
 
 </resources>
