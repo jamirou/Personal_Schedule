@@ -16,7 +16,7 @@
     <string name="creating_your_account">Creating your account…</string>
 
     <!--    MAIN MENU-->
-    <string name="SignOff">Sign out</string>
+    <string name="SignOut">Sign out</string>
 
     <!--    LOGIN ACTIVITY-->
     <string name="LogInTXT">Log In</string>
@@ -25,6 +25,11 @@
     <string name="Btn_login">Enter</string>
     <string name="NewUserTXT">You do not have an account? Sign up</string>
     <string name="logging_in">Logging in…</string>
+
+    <!--MAIN-->
+    <string name="WelcomeMainMenu">Welcome</string>
+    <string name="NamesMain"> -- </string>
+    <string name="MailMain"> -- </string>
 
 
 </resources>
