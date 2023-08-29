@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "567200277423",
+    "project_id": "notes-app-1d766",
+    "storage_bucket": "notes-app-1d766.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:567200277423:android:ab96ccdc4f8cb80fe0055a",
+        "android_client_info": {
+          "package_name": "com.jamirodev.agenda_online"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "567200277423-r0srju9pm8arq49ttpq54tdo6bhbbcle.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jamirodev.agenda_online",
+            "certificate_hash": "c149b19c53a50e18492068c40ced7ea6047b850f"
+          }
+        },
+        {
+          "client_id": "567200277423-qja7fsnku8gf60bfj3nls4bun0qlpcul.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdDGN2a1f9bpKa4cfP6fILC7YJUk3Da5o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "567200277423-qja7fsnku8gf60bfj3nls4bun0qlpcul.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

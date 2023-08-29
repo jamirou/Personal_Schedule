@@ -1,0 +1,17 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Agenda_Online" parent="Theme.Material3.DayNight.NoActionBar">
+
+        <item name="colorPrimary">@color/color_pri</item>
+        <item name="colorPrimaryVariant">@color/color_pri_dark</item>
+        <item name="colorOnSecondary">@color/color_pri_dark</item>
+    </style>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/color_pri</item>
+        <item name="colorPrimaryVariant">@color/color_pri_dark</item>
+        <item name="colorOnSecondary">@color/color_pri_dark</item>
+    </style>
+
+    <style name="Theme.Agenda_Online" parent="Base.Theme.Agenda_Online" />
+</resources>

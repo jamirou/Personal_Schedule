@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+
+    <color name="color_pri_dark">#004257</color>
+    <color name="color_pri">#1f896f</color>
+    <color name="color_sec">#bddb39</color>
+    <color name="color_thi">#ffe01a</color>
+    <color name="color_fou">#ff8142</color>
+
+</resources>
