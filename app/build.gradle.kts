@@ -53,6 +53,8 @@ dependencies {
 //    DattaBase firebase
     implementation("com.google.firebase:firebase-database:20.2.2")
 
+    implementation ("com.firebaseui:firebase-ui-database:8.0.0")
+
 
     // TODO: Add the dependencies for Firebase products you want to use
     // When using the BoM, don't specify versions in Firebase dependencies

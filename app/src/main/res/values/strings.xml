@@ -50,4 +50,14 @@
     <!--    MENU-->
     <string name="Add_NoteDB">Add</string>
 
+    <!--    ITEM NOTE-->
+    <string name="Id_note_Item">Id note</string>
+    <string name="Uid_User_Item">User Uid</string>
+    <string name="Mail_User_Item">User mail</string>
+    <string name="Date_register_hour_Item">Date and hour register</string>
+    <string name="Title_Item"> Title </string>
+    <string name="Description_Item"> Description </string>
+    <string name="Date_Item"> 00/00/0000</string>
+    <string name="State_Item"> Not finished </string>
+
 </resources>
