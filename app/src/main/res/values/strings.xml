@@ -37,5 +37,17 @@
     <string name="About">About</string>
     <string name="SignOut">Sign out</string>
 
+    <!--    ADD NOTE-->
+    <string name="Uid_User">User Uid</string>
+    <string name="Mail_User">User mail</string>
+    <string name="Date_ActualHour">Date and actual hour</string>
+    <string name="Title"> Title </string>
+    <string name="Description"> Description </string>
+    <string name="Btn_calendar">Calendar</string>
+    <string name="Date"> 00/00/0000</string>
+    <string name="State"> Not finished </string>
+
+    <!--    MENU-->
+    <string name="Add_NoteDB">Add</string>
 
 </resources>

@@ -63,8 +63,16 @@ public class MainMenuActivity extends AppCompatActivity {
         AddNotes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainMenuActivity.this, Add_Note_Activity.class));
-                Toast.makeText(MainMenuActivity.this, "Add Note", Toast.LENGTH_SHORT).show();
+
+                //OBTAIN TXTVIEW INFO
+                String uid_user = UidMain.getText().toString();
+                String email_user = MailMain.getText().toString();
+
+                //NEXT ACTIVITY
+                Intent intent = new Intent(MainMenuActivity.this, Add_Note_Activity.class);
+                intent.putExtra("Uid", uid_user);
+                intent.putExtra("Gmail", email_user);
+                startActivity(intent);
             }
         });
         ListNotes.setOnClickListener(new View.OnClickListener() {
@@ -153,7 +161,6 @@ public class MainMenuActivity extends AppCompatActivity {
                     SignOut.setEnabled(true);
                 }
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
