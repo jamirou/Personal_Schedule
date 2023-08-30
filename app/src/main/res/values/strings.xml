@@ -60,4 +60,8 @@
     <string name="Date_Item"> 00/00/0000</string>
     <string name="State_Item"> Not finished </string>
 
+    <!--    DIALOG BOX-->
+    <string name="ChooseOptionTXT">Choose an option</string>
+    <string name="CD_Delete">Delete</string>
+    <string name="CD_Update">Update</string>
 </resources>

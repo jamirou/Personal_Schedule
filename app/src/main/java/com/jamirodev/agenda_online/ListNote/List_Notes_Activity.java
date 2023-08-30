@@ -6,16 +6,24 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 import com.jamirodev.agenda_online.Objects.Note;
 import com.jamirodev.agenda_online.R;
 import com.jamirodev.agenda_online.ViewHolder.ViewHolder_Note;
@@ -30,6 +38,8 @@ public class List_Notes_Activity extends AppCompatActivity {
 
     FirebaseRecyclerAdapter<Note, ViewHolder_Note> firebaseRecyclerAdapter;
     FirebaseRecyclerOptions<Note> options;
+
+    Dialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +56,7 @@ public class List_Notes_Activity extends AppCompatActivity {
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         DATA_BASE = firebaseDatabase.getReference("Published notes");
+        dialog = new Dialog(List_Notes_Activity.this);
         ListNotesUsers();
     }
 
@@ -76,10 +87,34 @@ public class List_Notes_Activity extends AppCompatActivity {
                     public void onItemClick(View view, int position) {
                         Toast.makeText(List_Notes_Activity.this, "on item click", Toast.LENGTH_SHORT).show();
                     }
-
                     @Override
                     public void onItemLongClick(View view, int position) {
-                        Toast.makeText(List_Notes_Activity.this, "on item long click", Toast.LENGTH_SHORT).show();
+
+                        String id_note = getItem(position).getId_note();
+
+//                        DECLARE VIEWS
+                        Button CD_Delete, CD_Update;
+
+//                        CONNECT VIEWS WITH DESIGN
+                        dialog.setContentView(R.layout.dialog_options);
+                        CD_Delete = dialog.findViewById(R.id.CD_Delete);
+                        CD_Update = dialog.findViewById(R.id.CD_Update);
+
+                        CD_Delete.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                DeleteNote(id_note);
+                                dialog.dismiss();
+                            }
+                        });
+                        CD_Update.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Toast.makeText(List_Notes_Activity.this, "Update note", Toast.LENGTH_SHORT).show();
+                                dialog.dismiss();
+                            }
+                        });
+                        dialog.show();
                     }
                 });
                 return viewHolder_note;
@@ -92,6 +127,42 @@ public class List_Notes_Activity extends AppCompatActivity {
 
         rvNotes.setLayoutManager(linearLayoutManager);
         rvNotes.setAdapter(firebaseRecyclerAdapter);
+    }
+
+    private void DeleteNote(String idNote) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(List_Notes_Activity.this);
+        builder.setTitle("Delete Note");
+        builder.setMessage("Are you sure you want to delete it?");
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+//                DELETE NOTE FROM DB
+                Query query = DATA_BASE.orderByChild("id_note").equalTo(idNote);
+//                HERE COULD BE AN ERROR IN ID NOTE
+                query.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        for (DataSnapshot ds : snapshot.getChildren()){
+                            ds.getRef().removeValue();
+                        }
+                        Toast.makeText(List_Notes_Activity.this, "Note deleted", Toast.LENGTH_SHORT).show();
+                    }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        Toast.makeText(List_Notes_Activity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        });
+
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Toast.makeText(List_Notes_Activity.this, "Note not deleted", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        builder.create().show();
     }
 
     @Override
