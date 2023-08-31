@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UpdateNote.Update_Note_Activity">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <!--        ID NOTE-->
+        <TextView
+            android:id="@+id/Id_Note_Update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunitosans"
+            android:text="@string/Id_Note_Update"
+            android:textSize="18sp"
+            android:visibility="gone" />
+
+        <!--        UID USER-->
+        <TextView
+            android:id="@+id/Uid_User_Update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunitosans"
+            android:hint="@string/Uid_User_Update"
+            android:textSize="18sp"
+            android:visibility="gone" />
+
+        <!--        MAIL USER-->
+        <TextView
+            android:id="@+id/Mail_User_Update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunitosans"
+            android:hint="@string/Mail_User_Update"
+            android:textSize="18sp"
+            android:visibility="gone" />
+
+        <!--        DATE REGISTER-->
+        <TextView
+            android:id="@+id/Date_Register_Update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunitosans"
+            android:hint="@string/Date_Register_Update"
+            android:textSize="18sp"
+            android:visibility="gone" />
+
+        <!--        NOTE STATE-->
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/Task_Ended"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@color/color_done"
+                android:visibility="gone" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/Task_Incomplete"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="5dp"
+                android:background="@color/color_incomplete"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/State_Update"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:fontFamily="@font/nunitosans"
+                android:text="@string/State_Update"
+                android:textSize="20sp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <!--        TITLE-->
+        <EditText
+            android:id="@+id/Title_Update"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunitosans"
+            android:hint="@string/Title_Update"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <!--        DESCRIPTION-->
+        <EditText
+            android:id="@+id/Description_Update"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="start"
+            android:hint="@string/Description_Update"
+            android:minHeight="150dp"
+            android:textSize="20sp" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <!--            CALENDAR BTN-->
+            <Button
+                android:id="@+id/Btn_calendar_Update"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Btn_calendar_Update"
+                app:icon="@drawable/ic_calendar" />
+
+            <!--            DATE VISUALIZATION-->
+            <TextView
+                android:id="@+id/Date_Update"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:fontFamily="@font/nunitosans"
+                android:hint="@string/Date_Update"
+                android:textSize="20sp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/Spinner_State"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/New_State"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/New_State" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</ScrollView>

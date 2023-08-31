@@ -7,6 +7,7 @@ android {
     namespace = "com.jamirodev.agenda_online"
     compileSdk = 33
 
+
     defaultConfig {
         applicationId = "com.jamirodev.agenda_online"
         minSdk = 22

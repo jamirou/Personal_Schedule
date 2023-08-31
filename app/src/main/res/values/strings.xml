@@ -49,6 +49,7 @@
 
     <!--    MENU-->
     <string name="Add_NoteDB">Add</string>
+    <string name="Update_Note_BD">Update</string>
 
     <!--    ITEM NOTE-->
     <string name="Id_note_Item">Id note</string>
@@ -64,4 +65,23 @@
     <string name="ChooseOptionTXT">Choose an option</string>
     <string name="CD_Delete">Delete</string>
     <string name="CD_Update">Update</string>
+
+    <!--    UPDATE NOTES-->
+    <string name="Id_Note_Update">Id note</string>
+    <string name="Uid_User_Update">User Uid</string>
+    <string name="Mail_User_Update">User mail</string>
+    <string name="Date_Register_Update">Date register</string>
+    <string name="Title_Update"> Title </string>
+    <string name="Description_Update"> Description </string>
+    <string name="Btn_calendar_Update">Calendar</string>
+    <string name="Date_Update"> 00/00/0000</string>
+    <string name="State_Update"> Not finished </string>
+    <string name="New_State"> -- </string>
+
+    <!--    SPINNER-->
+    <string-array name="Notes_states">
+        <item>"Not finished"</item>
+        <item>"finished"</item>
+    </string-array>
+
 </resources>

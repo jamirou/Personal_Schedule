@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,6 +27,7 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.jamirodev.agenda_online.Objects.Note;
 import com.jamirodev.agenda_online.R;
+import com.jamirodev.agenda_online.UpdateNote.Update_Note_Activity;
 import com.jamirodev.agenda_online.ViewHolder.ViewHolder_Note;
 
 public class List_Notes_Activity extends AppCompatActivity {
@@ -77,20 +79,31 @@ public class List_Notes_Activity extends AppCompatActivity {
                         note.getState()
                 );
             }
+
             @NonNull
             @Override
             public ViewHolder_Note onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_note, parent,false);
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_note, parent, false);
                 ViewHolder_Note viewHolder_note = new ViewHolder_Note(view);
                 viewHolder_note.setOnClickListener(new ViewHolder_Note.ClickListener() {
                     @Override
                     public void onItemClick(View view, int position) {
                         Toast.makeText(List_Notes_Activity.this, "on item click", Toast.LENGTH_SHORT).show();
                     }
+
                     @Override
                     public void onItemLongClick(View view, int position) {
 
+//                        GET SELECTED NOTE DATA
                         String id_note = getItem(position).getId_note();
+                        String uid_user = getItem(position).getUid_user();
+                        String mail_user = getItem(position).getMail_user();
+                        String date_register = getItem(position).getDate_actual_hour();
+                        String title = getItem(position).getTitle();
+                        String description = getItem(position).getDescription();
+                        String date_note = getItem(position).getDate_note();
+                        String state = getItem(position).getState();
+
 
 //                        DECLARE VIEWS
                         Button CD_Delete, CD_Update;
@@ -110,7 +123,18 @@ public class List_Notes_Activity extends AppCompatActivity {
                         CD_Update.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                Toast.makeText(List_Notes_Activity.this, "Update note", Toast.LENGTH_SHORT).show();
+//                                Toast.makeText(List_Notes_Activity.this, "Update note", Toast.LENGTH_SHORT).show();
+//                                startActivity(new Intent(List_Notes_Activity.this, Update_Note_Activity.class));
+                                Intent intent = new Intent(List_Notes_Activity.this, Update_Note_Activity.class);
+                                intent.putExtra("id_note", id_note);
+                                intent.putExtra("uid_user", uid_user);
+                                intent.putExtra("mail_user", mail_user);
+                                intent.putExtra("date_register", date_register);
+                                intent.putExtra("title", title);
+                                intent.putExtra("description", description);
+                                intent.putExtra("date_note", date_note);
+                                intent.putExtra("state", state);
+                                startActivity(intent);
                                 dialog.dismiss();
                             }
                         });
@@ -142,11 +166,12 @@ public class List_Notes_Activity extends AppCompatActivity {
                 query.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        for (DataSnapshot ds : snapshot.getChildren()){
+                        for (DataSnapshot ds : snapshot.getChildren()) {
                             ds.getRef().removeValue();
                         }
                         Toast.makeText(List_Notes_Activity.this, "Note deleted", Toast.LENGTH_SHORT).show();
                     }
+
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
                         Toast.makeText(List_Notes_Activity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
