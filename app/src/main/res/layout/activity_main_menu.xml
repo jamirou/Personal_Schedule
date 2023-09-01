@@ -15,70 +15,127 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="135dp"
+            android:layout_height="130dp"
             android:padding="0.2dp"
-            app:cardBackgroundColor="@color/color_algaeGreen"
+            app:cardBackgroundColor="@color/color_profile"
             app:cardCornerRadius="5dp"
             app:cardUseCompatPadding="true">
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
+                android:layout_marginTop="3dp"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="10dp">
+                android:orientation="horizontal"
+                android:weightSum="4">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/nunitosans"
-                    android:text="@string/WelcomeMainMenu"
-                    android:textColor="@color/black"
-                    android:textSize="20sp" />
-
-                <ProgressBar
-                    android:id="@+id/ProgressBarData"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_gravity="center"
-                    android:layout_marginTop="10dp" />
+                    android:layout_marginStart="2dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/user" />
 
-
-                <!--                NAMES-->
-                <TextView
-                    android:id="@+id/UidMain"
+                <!--                DATA-->
+                <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/nunitosans"
-                    android:text="@string/UidMain"
-                    android:textColor="@color/black"
-                    android:textSize="15sp"
-                    android:visibility="gone" />
+                    android:layout_weight="3"
+                    android:orientation="vertical"
+                    android:padding="10dp">
 
-                <!--                NAMES-->
-                <TextView
-                    android:id="@+id/NamesMain"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/nunitosans"
-                    android:text="@string/NamesMain"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:visibility="gone" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunitosans"
+                        android:text="@string/WelcomeMainMenu"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
 
-                <!--                MAIL-->
-                <TextView
-                    android:id="@+id/MailMain"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/nunitosans"
-                    android:text="@string/MailMain"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:visibility="gone" />
+                    <ProgressBar
+                        android:id="@+id/ProgressBarData"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp" />
+
+
+                    <!--                UID-->
+                    <TextView
+                        android:id="@+id/UidMain"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunitosans"
+                        android:text="@string/UidMain"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:visibility="gone" />
+
+                    <!--NAMES-->
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/Linear_Names"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <!--                        ICON-->
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_name_menu" />
+
+                        <!--                NAMES-->
+                        <TextView
+                            android:id="@+id/NamesMain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:fontFamily="@font/nunitosans"
+                            android:text="@string/NamesMain"
+                            android:textColor="@color/black"
+                            android:textSize="17sp" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <!--MAIL-->
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/Linear_Mail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <!--                        ICON-->
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_email_menu" />
+
+                        <!--                MAIL-->
+                        <TextView
+                            android:id="@+id/MailMain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:fontFamily="@font/nunitosans"
+                            android:text="@string/MailMain"
+                            android:textColor="@color/black"
+                            android:textSize="17sp" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
+
         </androidx.cardview.widget.CardView>
+
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
@@ -111,6 +168,7 @@
                         android:id="@+id/AddNotes"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:backgroundTint="@color/color_profile"
                         android:layout_marginTop="10dp"
                         android:enabled="false"
                         android:fontFamily="@font/nunitosans"
@@ -135,6 +193,7 @@
                     <Button
                         android:id="@+id/ListNotes"
                         android:layout_width="match_parent"
+                        android:backgroundTint="@color/color_profile"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:enabled="false"
@@ -171,6 +230,7 @@
                     <Button
                         android:id="@+id/Archived"
                         android:layout_width="match_parent"
+                        android:backgroundTint="@color/color_profile"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:enabled="false"
@@ -196,6 +256,7 @@
                     <Button
                         android:id="@+id/Profile"
                         android:layout_width="match_parent"
+                        android:backgroundTint="@color/color_profile"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:enabled="false"
@@ -233,6 +294,7 @@
                         android:id="@+id/About"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:backgroundTint="@color/color_profile"
                         android:layout_marginTop="10dp"
                         android:enabled="false"
                         android:fontFamily="@font/nunitosans"
@@ -258,6 +320,7 @@
                         android:id="@+id/SignOut"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:backgroundTint="@color/color_profile"
                         android:layout_marginTop="10dp"
                         android:enabled="false"
                         android:fontFamily="@font/nunitosans"

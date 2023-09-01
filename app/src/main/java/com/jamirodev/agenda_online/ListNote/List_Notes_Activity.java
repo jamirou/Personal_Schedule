@@ -19,12 +19,15 @@ import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.jamirodev.agenda_online.Details.Detail_Note_Activity;
 import com.jamirodev.agenda_online.Objects.Note;
 import com.jamirodev.agenda_online.R;
 import com.jamirodev.agenda_online.UpdateNote.Update_Note_Activity;
@@ -43,18 +46,25 @@ public class List_Notes_Activity extends AppCompatActivity {
 
     Dialog dialog;
 
+    FirebaseAuth auth;
+    FirebaseUser user;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_notes);
 
         ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
         actionBar.setTitle("Notes");
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setDisplayShowHomeEnabled(true);
 
         rvNotes = findViewById(R.id.rvNotes);
         rvNotes.setHasFixedSize(true);
+
+        auth = FirebaseAuth.getInstance();
+        user = auth.getCurrentUser();
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         DATA_BASE = firebaseDatabase.getReference("Published notes");
@@ -63,7 +73,9 @@ public class List_Notes_Activity extends AppCompatActivity {
     }
 
     private void ListNotesUsers() {
-        options = new FirebaseRecyclerOptions.Builder<Note>().setQuery(DATA_BASE, Note.class).build();
+        //CONSULT
+        Query query = DATA_BASE.orderByChild("uid_user").equalTo(user.getUid());
+        options = new FirebaseRecyclerOptions.Builder<Note>().setQuery(query, Note.class).build();
         firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Note, ViewHolder_Note>(options) {
             @Override
             protected void onBindViewHolder(@NonNull ViewHolder_Note viewHolder_note, int position, @NonNull Note note) {
@@ -88,7 +100,26 @@ public class List_Notes_Activity extends AppCompatActivity {
                 viewHolder_note.setOnClickListener(new ViewHolder_Note.ClickListener() {
                     @Override
                     public void onItemClick(View view, int position) {
-                        Toast.makeText(List_Notes_Activity.this, "on item click", Toast.LENGTH_SHORT).show();
+                        String id_note = getItem(position).getId_note();
+                        String uid_user = getItem(position).getUid_user();
+                        String mail_user = getItem(position).getMail_user();
+                        String date_register = getItem(position).getDate_actual_hour();
+                        String title = getItem(position).getTitle();
+                        String description = getItem(position).getDescription();
+                        String date_note = getItem(position).getDate_note();
+                        String state = getItem(position).getState();
+
+                        //SEND DATA TO DETAIL ACTIVITY
+                        Intent intent = new Intent(List_Notes_Activity.this, Detail_Note_Activity.class);
+                        intent.putExtra("id_note", id_note);
+                        intent.putExtra("uid_user", uid_user);
+                        intent.putExtra("mail_user", mail_user);
+                        intent.putExtra("date_register", date_register);
+                        intent.putExtra("title", title);
+                        intent.putExtra("description", description);
+                        intent.putExtra("date_note", date_note);
+                        intent.putExtra("state", state);
+                        startActivity(intent);
                     }
 
                     @Override

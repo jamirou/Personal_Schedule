@@ -13,6 +13,10 @@
         android:theme="@style/Theme.Agenda_Online"
         tools:targetApi="31">
         <activity
+            android:name=".Details.Detail_Note_Activity"
+            android:exported="false"
+            android:theme="@style/AppTheme"/>
+        <activity
             android:name=".UpdateNote.Update_Note_Activity"
             android:exported="false"
             android:theme="@style/AppTheme" />

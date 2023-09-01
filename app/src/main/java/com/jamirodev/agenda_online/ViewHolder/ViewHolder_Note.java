@@ -2,6 +2,7 @@ package com.jamirodev.agenda_online.ViewHolder;
 
 import android.content.Context;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -45,6 +46,9 @@ public class ViewHolder_Note extends RecyclerView.ViewHolder {
         TextView Id_note_Item, Uid_User_Item, Mail_User_Item, Date_register_hour_Item, Title_Item,
                 Description_Item, Date_Item, State_Item;
 
+        ImageView Task_Ended_Item, Task_Incomplete_Item;
+
+
         //CONNECT WITH ITEM
         Id_note_Item = mView.findViewById(R.id.Id_note_Item);
         Uid_User_Item = mView.findViewById(R.id.Uid_User_Item);
@@ -55,6 +59,9 @@ public class ViewHolder_Note extends RecyclerView.ViewHolder {
         Date_Item = mView.findViewById(R.id.Date_Item);
         State_Item = mView.findViewById(R.id.State_Item);
 
+        Task_Ended_Item = mView.findViewById(R.id.Task_Ended_Item);
+        Task_Incomplete_Item = mView.findViewById(R.id.Task_Incomplete_Item);
+
         //SET INFO ON ITEM
         Id_note_Item.setText(id_note);
         Uid_User_Item.setText(uid_user);
@@ -64,6 +71,13 @@ public class ViewHolder_Note extends RecyclerView.ViewHolder {
         Description_Item.setText(description);
         Date_Item.setText(date_note);
         State_Item.setText(state);
+
+        //MANAGE STATUS COLOR
+        if (state.equals("finished")){
+            Task_Ended_Item.setVisibility(View.VISIBLE);
+        }else {
+            Task_Incomplete_Item.setVisibility(View.VISIBLE);
+        }
 
     }
 }

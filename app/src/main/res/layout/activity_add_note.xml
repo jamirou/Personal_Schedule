@@ -19,7 +19,8 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/nunitosans"
             android:hint="@string/Uid_User"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:visibility="gone" />
 
         <!--        MAIL USER-->
         <TextView
@@ -28,13 +29,39 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/nunitosans"
             android:hint="@string/Mail_User"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:visibility="gone" />
+
+        <!--ICON AND TV-->
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+<!--            ICON-->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_date_hour_register"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/nunitosans"
+                android:text="@string/Date_Hour_Actual_TXT"/>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
         <!--        DATE ACTUALHOUR-->
         <TextView
             android:id="@+id/Date_ActualHour"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"
             android:fontFamily="@font/nunitosans"
             android:hint="@string/Date_ActualHour"
             android:textSize="18sp" />
@@ -71,7 +98,9 @@
                 android:id="@+id/Btn_calendar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/color_profile"
                 android:text="@string/Btn_calendar"
+                android:textColor="@color/black"
                 app:icon="@drawable/ic_calendar" />
 
             <!--            DATE VISUALIZATION-->

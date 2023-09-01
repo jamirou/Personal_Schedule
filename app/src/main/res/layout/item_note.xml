@@ -86,7 +86,7 @@
             <TextView
                 android:id="@+id/Description_Item"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:fontFamily="@font/nunitosans"
                 android:text="@string/Description_Item"
                 android:textSize="18sp" />
@@ -99,14 +99,44 @@
                 android:fontFamily="@font/nunitosans"
                 android:text="@string/Date_Item" />
 
-            <!--        STATE-->
-            <TextView
-                android:id="@+id/State_Item"
+
+            <!--        NOTE STATE-->
+            <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/nunitosans"
-                android:text="@string/State_Item"
-                android:visibility="gone" />
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/Task_Ended_Item"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_gravity="center"
+                    android:background="@color/color_done"
+                    android:visibility="gone" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/Task_Incomplete_Item"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:background="@color/color_incomplete"
+                    android:visibility="gone" />
+
+                <!--        STATE-->
+                <TextView
+                    android:id="@+id/State_Item"
+                    android:layout_width="match_parent"
+                    android:textSize="20sp"
+                    android:layout_marginStart="15dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nunitosans"
+                    android:text="@string/State_Item" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 

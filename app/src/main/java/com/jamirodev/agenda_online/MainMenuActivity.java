@@ -3,6 +3,7 @@ package com.jamirodev.agenda_online;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.LinearLayoutCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -33,6 +34,8 @@ public class MainMenuActivity extends AppCompatActivity {
     TextView UidMain, NamesMain, MailMain;
     ProgressBar ProgressBarData;
 
+    LinearLayoutCompat Linear_Names, Linear_Mail;
+
     DatabaseReference Users;
 
     @Override
@@ -47,6 +50,11 @@ public class MainMenuActivity extends AppCompatActivity {
         NamesMain = findViewById(R.id.NamesMain);
         MailMain = findViewById(R.id.MailMain);
         ProgressBarData = findViewById(R.id.ProgressBarData);
+
+        Linear_Names = findViewById(R.id.Linear_Names);
+        Linear_Mail = findViewById(R.id.Linear_Mail);
+
+
 
         Users = FirebaseDatabase.getInstance().getReference("Users");
 
@@ -132,15 +140,16 @@ public class MainMenuActivity extends AppCompatActivity {
         Users.child(user.getUid()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
                 //if user exist
                 if (snapshot.exists()) {
                     //hide progressbar
                     ProgressBarData.setVisibility(View.GONE);
                     //SHOWING TEXTVIEW
-                    UidMain.setVisibility(View.VISIBLE);
-                    NamesMain.setVisibility(View.VISIBLE);
-                    MailMain.setVisibility(View.VISIBLE);
+                    //UidMain.setVisibility(View.VISIBLE);
+                    //NamesMain.setVisibility(View.VISIBLE);
+                    //MailMain.setVisibility(View.VISIBLE);
+                    Linear_Names.setVisibility(View.VISIBLE);
+                    Linear_Mail.setVisibility(View.VISIBLE);
 
                     //GET DATA
                     String uid = "" + snapshot.child("uid").getValue();
