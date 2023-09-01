@@ -2,10 +2,15 @@ package com.jamirodev.agenda_online;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.LinearLayoutCompat;
 
+import android.app.Dialog;
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +18,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -25,6 +32,7 @@ import com.jamirodev.agenda_online.ArchivedNotes.Archived_Notes_Activity;
 import com.jamirodev.agenda_online.ListNote.List_Notes_Activity;
 import com.jamirodev.agenda_online.Profile.Profile_User_Activity;
 
+/** @noinspection ALL*/
 public class MainMenuActivity extends AppCompatActivity {
 
     Button AddNotes, ListNotes, Archived, Profile, About, SignOut;
@@ -32,28 +40,35 @@ public class MainMenuActivity extends AppCompatActivity {
     FirebaseUser user;
 
     TextView UidMain, NamesMain, MailMain;
+    Button MainAccountStatus;
     ProgressBar ProgressBarData;
-
-    LinearLayoutCompat Linear_Names, Linear_Mail;
-
+    ProgressDialog progressDialog;
+    LinearLayoutCompat Linear_Names, Linear_Mail, Linear_Verification;
     DatabaseReference Users;
-
+    Dialog dialog_verified_account;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
 
         ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
         actionBar.setTitle("Online schedule");
 
         UidMain = findViewById(R.id.UidMain);
         NamesMain = findViewById(R.id.NamesMain);
         MailMain = findViewById(R.id.MailMain);
+        MainAccountStatus = findViewById(R.id.MainAccountStatus);
         ProgressBarData = findViewById(R.id.ProgressBarData);
+        dialog_verified_account = new Dialog(this);
+
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setTitle("Please wait...");
+        progressDialog.setCanceledOnTouchOutside(false);
 
         Linear_Names = findViewById(R.id.Linear_Names);
         Linear_Mail = findViewById(R.id.Linear_Mail);
-
+        Linear_Verification = findViewById(R.id.Linear_Verification);
 
 
         Users = FirebaseDatabase.getInstance().getReference("Users");
@@ -67,6 +82,20 @@ public class MainMenuActivity extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
         user = firebaseAuth.getCurrentUser();
+
+        MainAccountStatus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (user.isEmailVerified()){
+                    //IF THE ACCOUNT IS VERIFIED
+                    //Toast.makeText(MainMenuActivity.this, "Verified account", Toast.LENGTH_SHORT).show();
+                    AnimationVerifiedAccount();
+                }else {
+                    //IF THE ACCOUNT IS NOT VERIFIED
+                    VerifyEmailAccount();
+                }
+            }
+        });
 
         AddNotes.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -121,12 +150,82 @@ public class MainMenuActivity extends AppCompatActivity {
 
     }
 
+    private void VerifyEmailAccount() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Verify account")
+                .setMessage("Press Confirm to send the verification to the email: "
+                +user.getEmail())
+                .setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        SendMailForVerification();
+                    }
+                })
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Toast.makeText(MainMenuActivity.this, "Operation canceled", Toast.LENGTH_SHORT).show();
+                    }
+                }).show();
+    }
+
+    private void SendMailForVerification() {
+        progressDialog.setMessage("sending confirmation to your inbox "+ user.getEmail());
+        progressDialog.show();
+
+        user.sendEmailVerification()
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        //SUCCESSFULLY
+                        progressDialog.dismiss();
+                        Toast.makeText(MainMenuActivity.this, "Please check the account in your inbox "+ user.getEmail(), Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        //FAILED CONFIRMATION
+                        Toast.makeText(MainMenuActivity.this, "An error has occurred: "+e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
+
+    private void CheckAccountVerification() {
+        String Verified = "Verified";
+        String Not_Verified = "Not verified";
+        if (user.isEmailVerified()){
+            MainAccountStatus.setText(Verified);
+            MainAccountStatus.setBackgroundColor(Color.rgb(219, 223, 234));
+        }else {
+            MainAccountStatus.setText(Not_Verified);
+            MainAccountStatus.setBackgroundColor(Color.rgb(244, 206, 115));
+
+        }
+    }
+
+    private void AnimationVerifiedAccount() {
+        Button Understood_Verified;
+
+        dialog_verified_account.setContentView(R.layout.verified_account_dialog);
+
+        Understood_Verified = dialog_verified_account.findViewById(R.id.Understood_Verified);
+
+        Understood_Verified.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog_verified_account.dismiss();
+            }
+        });
+        dialog_verified_account.show();
+        dialog_verified_account.setCanceledOnTouchOutside(false);
+    }
+
     @Override
     protected void onStart() {
         CheckLogin();
         super.onStart();
     }
-
     private void CheckLogin() {
         if (user != null) {
             DataLoad();
@@ -135,8 +234,10 @@ public class MainMenuActivity extends AppCompatActivity {
             finish();
         }
     }
-
     private void DataLoad() {
+
+        CheckAccountVerification();
+
         Users.child(user.getUid()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -145,11 +246,10 @@ public class MainMenuActivity extends AppCompatActivity {
                     //hide progressbar
                     ProgressBarData.setVisibility(View.GONE);
                     //SHOWING TEXTVIEW
-                    //UidMain.setVisibility(View.VISIBLE);
-                    //NamesMain.setVisibility(View.VISIBLE);
                     //MailMain.setVisibility(View.VISIBLE);
                     Linear_Names.setVisibility(View.VISIBLE);
                     Linear_Mail.setVisibility(View.VISIBLE);
+                    Linear_Verification.setVisibility(View.VISIBLE);
 
                     //GET DATA
                     String uid = "" + snapshot.child("uid").getValue();

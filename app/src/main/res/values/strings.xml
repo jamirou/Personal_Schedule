@@ -29,6 +29,7 @@
     <string name="UidMain"> -- </string>
     <string name="NamesMain"> -- </string>
     <string name="MailMain"> -- </string>
+    <string name="MainAccountStatus">Not verified</string>
 
     <string name="AddNotes">Add</string>
     <string name="ListNotes">Notes</string>
@@ -66,6 +67,11 @@
     <string name="ChooseOptionTXT">Choose an option</string>
     <string name="CD_Delete">Delete</string>
     <string name="CD_Update">Update</string>
+
+<!--    DIALOG VERIFIED ACCOUNT-->
+    <string name="Verified_Account_TXT">Verified account</string>
+    <string name="Understood_Verified">Understood</string>
+
 
     <!--    UPDATE NOTES-->
     <string name="Id_Note_Update">Id note</string>

@@ -111,6 +111,7 @@
             android:layout_marginTop="15dp"
             android:fontFamily="@font/nunitosans"
             android:textSize="18sp"
+            android:backgroundTint="@color/color_Button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/RegisterUser"/>

@@ -15,7 +15,7 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="130dp"
+            android:layout_height="180dp"
             android:padding="0.2dp"
             app:cardBackgroundColor="@color/color_profile"
             app:cardCornerRadius="5dp"
@@ -23,7 +23,7 @@
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
-                android:layout_marginTop="3dp"
+                android:layout_marginTop="15dp"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:weightSum="4">
@@ -44,13 +44,13 @@
                     android:orientation="vertical"
                     android:padding="10dp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/nunitosans"
-                        android:text="@string/WelcomeMainMenu"
-                        android:textColor="@color/black"
-                        android:textSize="20sp" />
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:fontFamily="@font/nunitosans"-->
+<!--                        android:text="@string/WelcomeMainMenu"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:textSize="20sp" />-->
 
                     <ProgressBar
                         android:id="@+id/ProgressBarData"
@@ -124,6 +124,36 @@
                             android:text="@string/MailMain"
                             android:textColor="@color/black"
                             android:textSize="17sp" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <!--VERIFICATION-->
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/Linear_Verification"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <!--ICON-->
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_verified_main" />
+
+                        <!--STATUS-->
+                        <Button
+                            android:id="@+id/MainAccountStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="3dp"
+                            android:layout_marginTop="6dp"
+                            android:fontFamily="@font/nunitosans"
+                            android:text="@string/MainAccountStatus"
+                            android:textColor="@color/black"
+                            android:padding="0dp"
+                            android:textSize="15sp" />
 
                     </androidx.appcompat.widget.LinearLayoutCompat>
 
