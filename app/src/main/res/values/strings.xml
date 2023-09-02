@@ -33,7 +33,7 @@
 
     <string name="AddNotes">Add</string>
     <string name="ListNotes">Notes</string>
-    <string name="Archived">Archived</string>
+    <string name="Important">Important</string>
     <string name="Profile">Profile</string>
     <string name="About">About</string>
     <string name="SignOut">Sign out</string>
@@ -63,12 +63,22 @@
     <string name="Date_Item"> 00/00/0000</string>
     <string name="State_Item"> Not finished </string>
 
+    <!--    ITEM NOTA IMPORTANT-->
+    <string name="Id_note_Item_I">Id note</string>
+    <string name="Uid_User_Item_I">User Uid</string>
+    <string name="Mail_User_Item_I">User mail</string>
+    <string name="Date_register_hour_Item_I">Date and hour register</string>
+    <string name="Title_Item_I"> Title </string>
+    <string name="Description_Item_I"> Description </string>
+    <string name="Date_Item_I"> 00/00/0000</string>
+    <string name="State_Item_I"> Not finished </string>
+
     <!--    DIALOG BOX-->
     <string name="ChooseOptionTXT">Choose an option</string>
     <string name="CD_Delete">Delete</string>
     <string name="CD_Update">Update</string>
 
-<!--    DIALOG VERIFIED ACCOUNT-->
+    <!--    DIALOG VERIFIED ACCOUNT-->
     <string name="Verified_Account_TXT">Verified account</string>
     <string name="Understood_Verified">Understood</string>
 
@@ -108,5 +118,6 @@
     <string name="Date_Note_Detail">Date note</string>
     <string name="State_Note_Detail_TXT">Note status: </string>
     <string name="State_Note_Detail">Status</string>
+    <string name="Btn_Important">Important</string>
 
 </resources>

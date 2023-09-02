@@ -258,14 +258,14 @@
                         android:src="@drawable/archived" />
 
                     <Button
-                        android:id="@+id/Archived"
+                        android:id="@+id/Important"
                         android:layout_width="match_parent"
                         android:backgroundTint="@color/color_profile"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:enabled="false"
                         android:fontFamily="@font/nunitosans"
-                        android:text="@string/Archived" />
+                        android:text="@string/Important" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 

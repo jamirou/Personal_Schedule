@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:padding="0.2dp"
+    app:cardCornerRadius="10dp"
+    app:cardUseCompatPadding="true">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <!--        ICONO-->
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:src="@drawable/icon_important_note" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="7dp"
+            android:orientation="vertical">
+
+
+            <!--        UID NOTE-->
+            <TextView
+                android:id="@+id/Id_note_Item_I"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunitosans"
+                android:text="@string/Id_note_Item_I"
+                android:visibility="gone" />
+
+            <!--            USER UID-->
+            <TextView
+                android:id="@+id/Uid_User_Item_I"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunitosans"
+                android:text="@string/Uid_User_Item_I"
+                android:visibility="gone" />
+
+            <!--        MAIL USER-->
+            <TextView
+                android:id="@+id/Mail_User_Item_I"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunitosans"
+                android:text="@string/Mail_User_Item_I"
+                android:visibility="gone" />
+
+            <!--        DATE AND HOUR REGISTER-->
+            <TextView
+                android:id="@+id/Date_register_hour_Item_I"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunitosans"
+                android:text="@string/Date_register_hour_Item_I"
+                android:visibility="gone" />
+
+            <!--        TITLE -->
+            <TextView
+                android:id="@+id/Title_Item_I"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunitosans"
+                android:text="@string/Title_Item_I"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <!--        DESCRIPTION-->
+            <TextView
+                android:id="@+id/Description_Item_I"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:fontFamily="@font/nunitosans"
+                android:text="@string/Description_Item_I"
+                android:textSize="18sp" />
+
+            <!--        DATE -->
+            <TextView
+                android:id="@+id/Date_Item_I"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunitosans"
+                android:text="@string/Date_Item_I" />
+
+
+            <!--        NOTE STATE-->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/Task_Ended_Item_I"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_gravity="center"
+                    android:background="@color/color_done"
+                    android:visibility="gone" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/Task_Incomplete_Item_I"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:background="@color/color_incomplete"
+                    android:visibility="gone" />
+
+                <!--        STATE-->
+                <TextView
+                    android:id="@+id/State_Item_I"
+                    android:layout_width="match_parent"
+                    android:textSize="20sp"
+                    android:layout_marginStart="15dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nunitosans"
+                    android:text="@string/State_Item_I" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.cardview.widget.CardView>

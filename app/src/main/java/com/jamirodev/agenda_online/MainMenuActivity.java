@@ -28,14 +28,14 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.jamirodev.agenda_online.AddNote.Add_Note_Activity;
-import com.jamirodev.agenda_online.ArchivedNotes.Archived_Notes_Activity;
+import com.jamirodev.agenda_online.ImportantNotes.Important_Notes_Activity;
 import com.jamirodev.agenda_online.ListNote.List_Notes_Activity;
 import com.jamirodev.agenda_online.Profile.Profile_User_Activity;
 
 /** @noinspection ALL*/
 public class MainMenuActivity extends AppCompatActivity {
 
-    Button AddNotes, ListNotes, Archived, Profile, About, SignOut;
+    Button AddNotes, ListNotes, Important, Profile, About, SignOut;
     FirebaseAuth firebaseAuth;
     FirebaseUser user;
 
@@ -75,7 +75,7 @@ public class MainMenuActivity extends AppCompatActivity {
 
         AddNotes = findViewById(R.id.AddNotes);
         ListNotes = findViewById(R.id.ListNotes);
-        Archived = findViewById(R.id.Archived);
+        Important = findViewById(R.id.Important);
         Profile = findViewById(R.id.Profile);
         About = findViewById(R.id.About);
         SignOut = findViewById(R.id.SignOut);
@@ -119,10 +119,10 @@ public class MainMenuActivity extends AppCompatActivity {
                 Toast.makeText(MainMenuActivity.this, "List Notes", Toast.LENGTH_SHORT).show();
             }
         });
-        Archived.setOnClickListener(new View.OnClickListener() {
+        Important.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainMenuActivity.this, Archived_Notes_Activity.class));
+                startActivity(new Intent(MainMenuActivity.this, Important_Notes_Activity.class));
                 Toast.makeText(MainMenuActivity.this, "Archived Notes", Toast.LENGTH_SHORT).show();
             }
         });
@@ -196,7 +196,7 @@ public class MainMenuActivity extends AppCompatActivity {
         String Not_Verified = "Not verified";
         if (user.isEmailVerified()){
             MainAccountStatus.setText(Verified);
-            MainAccountStatus.setBackgroundColor(Color.rgb(219, 223, 234));
+            MainAccountStatus.setBackgroundColor(Color.rgb(255, 255, 255));
         }else {
             MainAccountStatus.setText(Not_Verified);
             MainAccountStatus.setBackgroundColor(Color.rgb(244, 206, 115));
@@ -264,7 +264,7 @@ public class MainMenuActivity extends AppCompatActivity {
                     //ENABLE MENU BUTTONS
                     AddNotes.setEnabled(true);
                     ListNotes.setEnabled(true);
-                    Archived.setEnabled(true);
+                    Important.setEnabled(true);
                     Profile.setEnabled(true);
                     About.setEnabled(true);
                     SignOut.setEnabled(true);
