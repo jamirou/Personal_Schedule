@@ -120,7 +120,7 @@ public class Detail_Note_Activity extends AppCompatActivity {
             date_R = intent.getString("date_note");
             state_R = intent.getString("state");
 
-            String Id_Note_Important = uid_user_R + title_R;
+
 
             HashMap<String, String> Note_Important = new HashMap<>();
             Note_Important.put("id_note", id_note_R);
@@ -131,10 +131,10 @@ public class Detail_Note_Activity extends AppCompatActivity {
             Note_Important.put("description", description_R);
             Note_Important.put("date_note", date_R);
             Note_Important.put("state", state_R);
-            Note_Important.put("id_note_important", Id_Note_Important);
+
 
             DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
-            reference.child(Objects.requireNonNull(firebaseAuth.getUid())).child("Important Notes").child(Id_Note_Important)
+            reference.child(Objects.requireNonNull(firebaseAuth.getUid())).child("Important Notes").child(id_note_R)
                     .setValue(Note_Important)
                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
@@ -155,18 +155,15 @@ public class Detail_Note_Activity extends AppCompatActivity {
         }else {
             Bundle intent = getIntent().getExtras();
             assert intent != null;
-            uid_user_R = intent.getString("uid_user");
-            title_R = intent.getString("title");
-
-            String Identifier_note_important = uid_user_R + title_R;
+            id_note_R = intent.getString("id_note");
 
             DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
-            reference.child(firebaseAuth.getUid()).child("Important Notes").child(Identifier_note_important)
+            reference.child(Objects.requireNonNull(firebaseAuth.getUid())).child("Important Notes").child(id_note_R)
                     .removeValue()
                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void unused) {
-                            Toast.makeText(Detail_Note_Activity.this, "Note its no longer important", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Detail_Note_Activity.this, "Note deleted from important", Toast.LENGTH_SHORT).show();
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
@@ -182,12 +179,10 @@ public class Detail_Note_Activity extends AppCompatActivity {
         }else {
             Bundle intent = getIntent().getExtras();
             assert intent != null;
-            uid_user_R = intent.getString("uid_user");
-            title_R = intent.getString("title");
+            id_note_R = intent.getString("id_note");
 
-            String Identifier_note_important = uid_user_R + title_R;
             DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
-            reference.child(firebaseAuth.getUid()).child("Important Notes").child(Identifier_note_important)
+            reference.child(Objects.requireNonNull(firebaseAuth.getUid())).child("Important Notes").child(id_note_R)
                     .addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {

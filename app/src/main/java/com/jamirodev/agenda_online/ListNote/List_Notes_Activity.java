@@ -12,6 +12,9 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -220,6 +223,61 @@ public class List_Notes_Activity extends AppCompatActivity {
 
         builder.create().show();
     }
+
+
+    private void Empty_Notes_Register() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(List_Notes_Activity.this);
+        builder.setTitle("Empty Notes");
+        builder.setMessage("Do you want to delete all notes?");
+
+        builder.setPositiveButton("yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+//                DELETE ALL NOTES
+                Query query = DATA_BASE.orderByChild("uid_user").equalTo(user.getUid());
+                query.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        for (DataSnapshot ds : snapshot.getChildren()){
+                            ds.getRef().removeValue();
+                        }
+                        Toast.makeText(List_Notes_Activity.this, "All notes have been removed", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
+            }
+        });
+
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Toast.makeText(List_Notes_Activity.this, "Operation canceled by user", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        builder.create().show();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_empty_all_notes, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.Empty_all_notes) {
+            Empty_Notes_Register();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 
     @Override
     protected void onStart() {

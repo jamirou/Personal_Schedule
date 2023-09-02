@@ -53,7 +53,8 @@ public class MainMenuActivity extends AppCompatActivity {
 
         ActionBar actionBar = getSupportActionBar();
         assert actionBar != null;
-        actionBar.setTitle("Online schedule");
+        actionBar.setTitle("");
+        actionBar.hide();
 
         UidMain = findViewById(R.id.UidMain);
         NamesMain = findViewById(R.id.NamesMain);
@@ -123,7 +124,7 @@ public class MainMenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainMenuActivity.this, Important_Notes_Activity.class));
-                Toast.makeText(MainMenuActivity.this, "Archived Notes", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainMenuActivity.this, "Important notes", Toast.LENGTH_SHORT).show();
             }
         });
         Profile.setOnClickListener(new View.OnClickListener() {

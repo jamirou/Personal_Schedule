@@ -38,6 +38,7 @@ public class Add_Note_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_add_note);
 
         ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
         actionBar.setTitle("");
         actionBar.setDisplayShowHomeEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);
@@ -123,11 +124,14 @@ public class Add_Note_Activity extends AppCompatActivity {
         String description = Description.getText().toString();
         String date = Date.getText().toString();
         String state = State.getText().toString();
+        String id_Note = DB_Firebase.push().getKey();
+
 
         //VALIDATE DATA
         if (!uid_user.equals("") && !mail_user.equals("") && !date_hour_actual.equals("") &&
                 !title.equals("") && !description.equals("") && !date.equals("") && !state.equals("")) {
-            Note note = new Note(mail_user+"/"+date_hour_actual,
+
+            Note note = new Note(id_Note,
                     uid_user,
                     mail_user,
                     date_hour_actual,
@@ -136,11 +140,11 @@ public class Add_Note_Activity extends AppCompatActivity {
                     date,
                     state);
 
-            String Note_user = DB_Firebase.push().getKey();
             //SET THE NAME OF THE DB
             String Name_DB = "Published notes";
 
-            DB_Firebase.child(Name_DB).child(Note_user).setValue(note);
+            assert id_Note != null;
+            DB_Firebase.child(Name_DB).child(id_Note).setValue(note);
             Toast.makeText(this, "Successfully added note", Toast.LENGTH_SHORT).show();
             onBackPressed();
         }

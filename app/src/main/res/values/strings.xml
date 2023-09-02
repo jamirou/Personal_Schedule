@@ -52,6 +52,7 @@
     <!--    MENU-->
     <string name="Add_NoteDB">Add</string>
     <string name="Update_Note_BD">Update</string>
+    <string name="Empty_all_notes">Empty all notes</string>
 
     <!--    ITEM NOTE-->
     <string name="Id_note_Item">Id note</string>
@@ -77,6 +78,12 @@
     <string name="ChooseOptionTXT">Choose an option</string>
     <string name="CD_Delete">Delete</string>
     <string name="CD_Update">Update</string>
+
+    <!--    DIALOG BOX DELETE IMPORTANT NOTE-->
+    <string name="DeleteImportantNoteTXT">Remove important note from list?</string>
+    <string name="DeleteNote">Delete</string>
+    <string name="DeleteNoteCancel">Cancel</string>
+
 
     <!--    DIALOG VERIFIED ACCOUNT-->
     <string name="Verified_Account_TXT">Verified account</string>
