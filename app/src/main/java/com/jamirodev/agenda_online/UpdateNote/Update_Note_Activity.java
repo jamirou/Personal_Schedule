@@ -50,6 +50,7 @@ public class Update_Note_Activity extends AppCompatActivity implements AdapterVi
         setContentView(R.layout.activity_update_note);
 
         ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
         actionBar.setTitle("Update note");
         actionBar.setDisplayShowHomeEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);

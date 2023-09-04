@@ -12,6 +12,9 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -35,7 +38,7 @@ import com.jamirodev.agenda_online.Profile.Profile_User_Activity;
 /** @noinspection ALL*/
 public class MainMenuActivity extends AppCompatActivity {
 
-    Button AddNotes, ListNotes, Important, Profile, About, SignOut;
+    Button AddNotes, ListNotes, Important, Contacts, About, SignOut;
     FirebaseAuth firebaseAuth;
     FirebaseUser user;
 
@@ -54,7 +57,6 @@ public class MainMenuActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         assert actionBar != null;
         actionBar.setTitle("");
-        actionBar.hide();
 
         UidMain = findViewById(R.id.UidMain);
         NamesMain = findViewById(R.id.NamesMain);
@@ -77,7 +79,7 @@ public class MainMenuActivity extends AppCompatActivity {
         AddNotes = findViewById(R.id.AddNotes);
         ListNotes = findViewById(R.id.ListNotes);
         Important = findViewById(R.id.Important);
-        Profile = findViewById(R.id.Profile);
+        Contacts = findViewById(R.id.Contacts);
         About = findViewById(R.id.About);
         SignOut = findViewById(R.id.SignOut);
 
@@ -127,11 +129,10 @@ public class MainMenuActivity extends AppCompatActivity {
                 Toast.makeText(MainMenuActivity.this, "Important notes", Toast.LENGTH_SHORT).show();
             }
         });
-        Profile.setOnClickListener(new View.OnClickListener() {
+        Contacts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainMenuActivity.this, Profile_User_Activity.class));
-                Toast.makeText(MainMenuActivity.this, "User profile", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainMenuActivity.this, "Contacts", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -266,7 +267,7 @@ public class MainMenuActivity extends AppCompatActivity {
                     AddNotes.setEnabled(true);
                     ListNotes.setEnabled(true);
                     Important.setEnabled(true);
-                    Profile.setEnabled(true);
+                    Contacts.setEnabled(true);
                     About.setEnabled(true);
                     SignOut.setEnabled(true);
                 }
@@ -276,6 +277,21 @@ public class MainMenuActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.Profile_User){
+            startActivity(new Intent(MainMenuActivity.this,Profile_User_Activity.class));
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void ExitApp() {

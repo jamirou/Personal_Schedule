@@ -1,10 +1,180 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Profile.Profile_User_Activity">
 
-  </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <!--BACKGROUND AND PROFILE IMAGE-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+            <!--BACKGROUND-->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/background" />
+            <!--PROFILE BACKGROUND-->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ProfileImage"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="120dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/user" />
+
+        </RelativeLayout>
+        <!--USER DATA-->
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+            <!--EMAIL-->
+            <TextView
+                android:id="@+id/Email_Profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/nunitosans"
+                android:text="@string/Email_Profile"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+            <!--UID-->
+            <TextView
+                android:id="@+id/Uid_Profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:drawableStart="@drawable/ic_uid_profile_user"
+                android:drawablePadding="5dp"
+                android:fontFamily="@font/nunitosans"
+                android:text="@string/Uid_Profile"
+                android:textSize="18sp" />
+            <!--NAMES-->
+            <EditText
+                android:id="@+id/Names_Profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/nunitosans"
+                android:hint="@string/Names_Profile"
+                android:inputType="textPersonName" />
+            <!--LAST NAME-->
+            <EditText
+                android:id="@+id/Last_Name_Profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunitosans"
+                android:hint="@string/Last_Name_Profile"
+                android:inputType="textPersonName" />
+            <!--AGE-->
+            <EditText
+                android:id="@+id/Age_Profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunitosans"
+                android:hint="@string/Age_Profile"
+                android:inputType="number" />
+
+            <!--HOME-->
+            <EditText
+                android:id="@+id/Home_Profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunitosans"
+                android:hint="@string/Home_Profile"
+                android:inputType="text" />
+            <!--COLLEGE-->
+            <EditText
+                android:id="@+id/College_Profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunitosans"
+                android:hint="@string/College_Profile"
+                android:inputType="text" />
+            <!--PROFESSION-->
+            <EditText
+                android:id="@+id/Profession_Profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunitosans"
+                android:hint="@string/Profession_Profile"
+                android:inputType="text" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <!--PHONE-->
+                <TextView
+                    android:id="@+id/Phone_Profile"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/nunitosans"
+                    android:hint="@string/Phone_Profile"
+                    android:textSize="18sp" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/Edit_Phone"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="15dp"
+                    android:src="@drawable/call" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/Birthdate_Profile"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/nunitosans"
+                    android:text="@string/Birthdate_Profile"
+                    android:textSize="18sp" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/Edit_Date"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="15dp"
+                    android:src="@drawable/calendary" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <!--SAVE DATA-->
+            <Button
+                android:id="@+id/Save_Data"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@color/color_Button"
+                android:text="@string/Save_Data" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</ScrollView>

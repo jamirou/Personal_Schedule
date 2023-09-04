@@ -72,6 +72,7 @@
             android:id="@+id/Btn_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/color_Button"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/nunitosans"
             android:text="@string/Btn_login" />

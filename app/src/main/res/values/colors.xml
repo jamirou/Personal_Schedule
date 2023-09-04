@@ -6,6 +6,7 @@
 
     <color name="icon_color">#051419</color>
 
+    <color name="bacgrkound_dark">#001B23</color>
     <color name="color_pri_dark">#004257</color>
     <color name="color_pri">#1f896f</color>
     <color name="color_sec">#bddb39</color>

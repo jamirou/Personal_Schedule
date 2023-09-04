@@ -281,17 +281,17 @@
                     <androidx.appcompat.widget.AppCompatImageView
                         android:layout_width="70dp"
                         android:layout_height="70dp"
-                        android:src="@drawable/profile" />
+                        android:src="@drawable/contact" />
 
                     <Button
-                        android:id="@+id/Profile"
+                        android:id="@+id/Contacts"
                         android:layout_width="match_parent"
                         android:backgroundTint="@color/color_profile"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:enabled="false"
                         android:fontFamily="@font/nunitosans"
-                        android:text="@string/Profile" />
+                        android:text="@string/Contacts" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 

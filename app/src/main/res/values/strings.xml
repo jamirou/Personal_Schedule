@@ -34,7 +34,7 @@
     <string name="AddNotes">Add</string>
     <string name="ListNotes">Notes</string>
     <string name="Important">Important</string>
-    <string name="Profile">Profile</string>
+    <string name="Contacts">Contacts</string>
     <string name="About">About</string>
     <string name="SignOut">Sign out</string>
 
@@ -53,6 +53,7 @@
     <string name="Add_NoteDB">Add</string>
     <string name="Update_Note_BD">Update</string>
     <string name="Empty_all_notes">Empty all notes</string>
+    <string name="Profile_User">Profile</string>
 
     <!--    ITEM NOTE-->
     <string name="Id_note_Item">Id note</string>
@@ -84,9 +85,13 @@
     <string name="DeleteNote">Delete</string>
     <string name="DeleteNoteCancel">Cancel</string>
 
+    <!--    DIALOG BOX ESTABLISH PHONE-->
+    <string name="Establish_Phone">Write your number</string>
+    <string name="Btn_Accept_phone">Accept</string>
+
 
     <!--    DIALOG VERIFIED ACCOUNT-->
-    <string name="Verified_Account_TXT">Verified account</string>
+    <string name="Verified_Account_TXT">Account verified</string>
     <string name="Understood_Verified">Understood</string>
 
 
@@ -126,5 +131,19 @@
     <string name="State_Note_Detail_TXT">Note status: </string>
     <string name="State_Note_Detail">Status</string>
     <string name="Btn_Important">Important</string>
+
+    <!--    USER PROFILE-->
+    <string name="Uid_Profile">Uid</string>
+    <string name="Names_Profile">Name</string>
+    <string name="Last_Name_Profile">Las name</string>
+    <string name="Email_Profile">Mail</string>
+    <string name="Age_Profile">Age</string>
+    <string name="Phone_Profile">Phone</string>
+    <string name="Home_Profile">Home</string>
+    <string name="College_Profile">College</string>
+    <string name="Profession_Profile">Profession</string>
+    <string name="Save_Data">Save data</string>
+    <string name="Birthdate_Profile">Birthdate</string>
+
 
 </resources>

@@ -42,6 +42,7 @@ public class RecordActivity extends AppCompatActivity {
         setContentView(R.layout.activity_record);
 
         ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
         actionBar.setTitle("Register");
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setDisplayShowHomeEnabled(true);
@@ -130,7 +131,17 @@ public class RecordActivity extends AppCompatActivity {
         Data.put("Names", name);
         Data.put("Password", password);
 
+        Data.put("Last name", "");
+        Data.put("Age", "");
+        Data.put("Phone", "");
+        Data.put("Home", "");
+        Data.put("College", "");
+        Data.put("Profession", "");
+        Data.put("Birthdate", "");
+        Data.put("Profile_img", "");
+
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Users");
+        assert uid != null;
         databaseReference.child(uid)
                 .setValue(Data)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
