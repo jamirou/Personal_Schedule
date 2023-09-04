@@ -118,7 +118,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/Btn_calendar_Update"
-                app:icon="@drawable/ic_calendar" />
+                android:drawableStart="@drawable/ic_calendar" />
 
             <!--            DATE VISUALIZATION-->
             <TextView

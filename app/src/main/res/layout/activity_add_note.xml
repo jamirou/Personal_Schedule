@@ -98,10 +98,11 @@
                 android:id="@+id/Btn_calendar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/color_profile"
+                android:backgroundTint="@color/color_Button"
                 android:text="@string/Btn_calendar"
                 android:textColor="@color/black"
-                app:icon="@drawable/ic_calendar" />
+                android:drawableStart="@drawable/ic_calendar" />
+
 
             <!--            DATE VISUALIZATION-->
             <TextView

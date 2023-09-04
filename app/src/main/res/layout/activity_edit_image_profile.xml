@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Profile.Edit_Image_Profile_Activity">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/Image_Profile_Update"
+            android:layout_width="330dp"
+            android:layout_height="350dp"
+            android:layout_gravity="center"
+            android:background="@color/color_pri_dark"
+            android:scaleType="centerCrop"
+            android:src="@drawable/user" />
+
+        <Button
+            android:id="@+id/BtnChooseImage"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:drawableStart="@drawable/ic_choose_image"
+            android:backgroundTint="@color/color_Button"
+            android:textStyle="bold"
+            android:fontFamily="@font/nunitosans"
+            android:text="@string/BtnChooseImage" />
+
+        <Button
+            android:id="@+id/BtnUpdateImage"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:backgroundTint="@color/color_Button"
+            android:drawableStart="@drawable/ic_update_image"
+            android:fontFamily="@font/nunitosans"
+            android:text="@string/BtnUpdateImage" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</RelativeLayout>

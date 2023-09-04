@@ -89,6 +89,10 @@
     <string name="Establish_Phone">Write your number</string>
     <string name="Btn_Accept_phone">Accept</string>
 
+    <!--    DIALOG BOX CHOOSE IMAGE-->
+    <string name="ChooseImageTxt">Choose route</string>
+    <string name="Btn_ChooseGallery">Gallery</string>
+    <string name="Btn_ChooseCamera">Camera</string>
 
     <!--    DIALOG VERIFIED ACCOUNT-->
     <string name="Verified_Account_TXT">Account verified</string>
@@ -144,6 +148,9 @@
     <string name="Profession_Profile">Profession</string>
     <string name="Save_Data">Save data</string>
     <string name="Birthdate_Profile">Birthdate</string>
+
+    <string name="BtnChooseImage">Select Image</string>
+    <string name="BtnUpdateImage">Update</string>
 
 
 </resources>

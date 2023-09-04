@@ -38,7 +38,7 @@ public class Profile_User_Activity extends AppCompatActivity {
     TextView Email_Profile, Phone_Profile, Uid_Profile, Birthdate_Profile;
     EditText Names_Profile, Last_Name_Profile, Age_Profile,
             Home_Profile, College_Profile, Profession_Profile;
-    ImageView Edit_Phone, Edit_Date;
+    ImageView Edit_Phone, Edit_Date, Edit_Image;
 
     Button Save_Data;
     FirebaseAuth firebaseAuth;
@@ -79,6 +79,14 @@ public class Profile_User_Activity extends AppCompatActivity {
                 UpdateData();
             }
         });
+
+        Edit_Image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Profile_User_Activity.this, Edit_Image_Profile_Activity.class));
+            }
+        });
+
     }
 
     private void InitVariables() {
@@ -96,6 +104,7 @@ public class Profile_User_Activity extends AppCompatActivity {
 
         Edit_Phone = findViewById(R.id.Edit_Phone);
         Edit_Date = findViewById(R.id.Edit_Date);
+        Edit_Image = findViewById(R.id.Edit_Image);
 
         dialog_Establish_phone = new Dialog(Profile_User_Activity.this);
 

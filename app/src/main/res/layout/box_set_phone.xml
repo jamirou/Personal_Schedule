@@ -14,7 +14,7 @@
 
         <com.hbb20.CountryCodePicker
             android:id="@+id/ccp"
-            app:ccpDialog_background="@color/lead"
+            app:ccpDialog_background="@color/bacgrkound_dark"
             app:ccp_autoDetectCountry="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
