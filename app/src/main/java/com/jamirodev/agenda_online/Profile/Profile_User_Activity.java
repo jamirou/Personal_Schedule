@@ -8,6 +8,9 @@ import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -29,6 +32,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.hbb20.CountryCodePicker;
 import com.jamirodev.agenda_online.MainMenuActivity;
 import com.jamirodev.agenda_online.R;
+import com.jamirodev.agenda_online.UpdatePassword.Update_Password_Activity;
 
 import java.util.Calendar;
 import java.util.HashMap;
@@ -270,6 +274,21 @@ public class Profile_User_Activity extends AppCompatActivity {
                     }
                 });
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.menu_update_password, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.Update_Password) {
+            startActivity(new Intent(Profile_User_Activity.this, Update_Password_Activity.class));
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void CheckLogin() {

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Contacts.Add_Contact_Activity">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/Uid_User_C"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunitosans"
+            android:visibility="gone"
+            android:text="@string/Uid_User_C"
+            android:textSize="20sp" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="newcontact.json"
+            app:lottie_imageAssetsFolder="assets"
+            app:lottie_loop="true" />
+
+        <EditText
+            android:id="@+id/Names_C"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/nunitosans"
+            android:hint="@string/Names_C"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/Lastname_C"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunitosans"
+            android:hint="@string/Lastname_C"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/Mail_C"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunitosans"
+            android:hint="@string/Mail_C"
+            android:inputType="textEmailAddress" />
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/Phone_C"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/nunitosans"
+                android:hint="@string/Phone_C"
+                android:textSize="20sp" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/Edit_Phone_C"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:src="@drawable/call" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <EditText
+            android:id="@+id/Age_C"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunitosans"
+            android:hint="@string/Age_C"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/Home_C"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunitosans"
+            android:hint="@string/Home_C"
+            android:inputType="text" />
+
+        <Button
+            android:id="@+id/Btn_Save_Contact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/color_Button"
+            android:fontFamily="@font/nunitosans"
+            android:text="@string/Btn_Save_Contact" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</ScrollView>

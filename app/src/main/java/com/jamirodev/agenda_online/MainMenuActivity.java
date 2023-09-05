@@ -31,6 +31,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.jamirodev.agenda_online.AddNote.Add_Note_Activity;
+import com.jamirodev.agenda_online.Contacts.List_Contacts_Activity;
 import com.jamirodev.agenda_online.ImportantNotes.Important_Notes_Activity;
 import com.jamirodev.agenda_online.ListNote.List_Notes_Activity;
 import com.jamirodev.agenda_online.Profile.Profile_User_Activity;
@@ -132,7 +133,11 @@ public class MainMenuActivity extends AppCompatActivity {
         Contacts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainMenuActivity.this, "Contacts", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(MainMenuActivity.this, "Contacts", Toast.LENGTH_SHORT).show();
+                String Uid_user = UidMain.getText().toString();
+                Intent intent = new Intent(MainMenuActivity.this, List_Contacts_Activity.class);
+                intent.putExtra("Uid", Uid_user);
+                startActivity(intent);
             }
         });
 

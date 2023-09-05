@@ -54,6 +54,8 @@
     <string name="Update_Note_BD">Update</string>
     <string name="Empty_all_notes">Empty all notes</string>
     <string name="Profile_User">Profile</string>
+    <string name="Update_Password">Update password</string>
+    <string name="Add_contact">Add contact</string>
 
     <!--    ITEM NOTE-->
     <string name="Id_note_Item">Id note</string>
@@ -74,6 +76,17 @@
     <string name="Description_Item_I"> Description </string>
     <string name="Date_Item_I"> 00/00/0000</string>
     <string name="State_Item_I"> Not finished </string>
+
+    <!--    ITEM CONTACT -->
+    <string name="Id_C_Item">Id contact</string>
+    <string name="Uid_C_Item">User Uid</string>
+    <string name="Names_C_Item">Names</string>
+    <string name="LastName_C_Item">Last name</string>
+    <string name="Mail_C_Item">Mail</string>
+    <string name="Phone_C_Item">Phone</string>
+    <string name="Age_C_Item">Age</string>
+    <string name="Home_C_Item">Home</string>
+
 
     <!--    DIALOG BOX-->
     <string name="ChooseOptionTXT">Choose an option</string>
@@ -152,5 +165,21 @@
     <string name="BtnChooseImage">Select Image</string>
     <string name="BtnUpdateImage">Update</string>
 
+    <!--    CHANGE PASSWORD-->
+    <string name="CurrentPasswordTXT">Current password: </string>
+    <string name="CurrentPassword"> -- </string>
+    <string name="ETCurrentPassword">Current password</string>
+    <string name="ETNewPassword">New password</string>
+    <string name="ETRNewPassword">Repeat new password </string>
+    <string name="BtnUpdatePassword">Update</string>
 
+    <!--    ADD CONTACT-->
+    <string name="Uid_User_C">My Uid</string>
+    <string name="Names_C">Contact name</string>
+    <string name="Lastname_C">Last name</string>
+    <string name="Mail_C">Mail</string>
+    <string name="Phone_C">Phone</string>
+    <string name="Age_C">Age</string>
+    <string name="Home_C">Home</string>
+    <string name="Btn_Save_Contact">Save contact</string>
 </resources>
