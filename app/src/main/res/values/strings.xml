@@ -111,6 +111,10 @@
     <string name="ValidateTXT">Name required</string>
     <string name="Btn_Validate_register_C">OK</string>
 
+    <!--    DIALOG BOX CONTACT OPTIONS-->
+    <string name="ChooseOptionContactTXT">Select</string>
+    <string name="Btn_delete_Contact">Delete</string>
+    <string name="Btn_Update_Contact">Update</string>
 
     <!--    DIALOG VERIFIED ACCOUNT-->
     <string name="Verified_Account_TXT">Account verified</string>
