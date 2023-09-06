@@ -2,11 +2,13 @@ package com.jamirodev.agenda_online.Contacts;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -22,9 +24,12 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 import com.jamirodev.agenda_online.Objects.Contact;
 import com.jamirodev.agenda_online.R;
 import com.jamirodev.agenda_online.ViewHolder.ViewHolderContact;
@@ -121,6 +126,7 @@ public class List_Contacts_Activity extends AppCompatActivity {
 
                     @Override
                     public void onItemLongClick(View view, int position) {
+                        String id_contact = getItem(position).getId_contact();
                         //Toast.makeText(List_Contacts_Activity.this, "On item log click", Toast.LENGTH_SHORT).show();
                         Button Btn_delete_Contact, Btn_Update_Contact;
 
@@ -132,7 +138,8 @@ public class List_Contacts_Activity extends AppCompatActivity {
                         Btn_delete_Contact.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                Toast.makeText(List_Contacts_Activity.this, "Delete contact", Toast.LENGTH_SHORT).show();
+                                //Toast.makeText(List_Contacts_Activity.this, "Delete contact", Toast.LENGTH_SHORT).show();
+                                DeleteContact(id_contact);
                                 dialog.dismiss();
                             }
                         });
@@ -158,6 +165,78 @@ public class List_Contacts_Activity extends AppCompatActivity {
         RVContacts.setAdapter(firebaseRecyclerAdapter);
     }
 
+    private void DeleteContact(String idContact) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(List_Contacts_Activity.this);
+        builder.setTitle("Delete");
+        builder.setMessage("Do you want to delete this contact?");
+
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Query query = DB_Users.child(user.getUid()).child("Contacts").orderByChild("id_contact").equalTo(idContact);
+                query.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        for (DataSnapshot ds : snapshot.getChildren()){
+                            ds.getRef().removeValue();
+                        }
+                        Toast.makeText(List_Contacts_Activity.this, "Contact deleted", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        Toast.makeText(List_Contacts_Activity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        });
+
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Toast.makeText(List_Contacts_Activity.this, "Cancelled by user", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        builder.create().show();
+    }
+
+    private void Empty_Register_contact(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(List_Contacts_Activity.this);
+        builder.setTitle("Empty all contacts");
+        builder.setMessage("Are you sure you want to delete all contacts?");
+
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Query query = DB_Users.child(user.getUid()).child("Contacts");
+                query.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        for (DataSnapshot ds: snapshot.getChildren()){
+                            ds.getRef().removeValue();
+                        }
+                        Toast.makeText(List_Contacts_Activity.this, "All contacts have been deleted", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+            }
+        });
+
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Toast.makeText(List_Contacts_Activity.this, "Canceled by user", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        builder.create().show();
+    }
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -180,6 +259,9 @@ public class List_Contacts_Activity extends AppCompatActivity {
             Intent intent = new Intent(List_Contacts_Activity.this, Add_Contact_Activity.class);
             intent.putExtra("Uid", Uid_recovered);
             startActivity(intent);
+        }
+        if (item.getItemId() == R.id.EmptyContacts){
+            Empty_Register_contact();
         }
         return super.onOptionsItemSelected(item);
     }

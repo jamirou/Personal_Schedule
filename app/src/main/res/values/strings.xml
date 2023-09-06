@@ -56,6 +56,7 @@
     <string name="Profile_User">Profile</string>
     <string name="Update_Password">Update password</string>
     <string name="Add_contact">Add contact</string>
+    <string name="EmptyContacts">Delete all contacts</string>
 
     <!--    ITEM NOTE-->
     <string name="Id_note_Item">Id note</string>
