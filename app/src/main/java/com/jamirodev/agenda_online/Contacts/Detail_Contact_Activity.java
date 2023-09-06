@@ -58,7 +58,12 @@ public class Detail_Contact_Activity extends AppCompatActivity {
         Message_C.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(Detail_Contact_Activity.this, "Send Message", Toast.LENGTH_SHORT).show();
+                if (ContextCompat.checkSelfPermission(Detail_Contact_Activity.this,
+                        Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_GRANTED) {
+                    SendMessage();
+                }else{
+                    MessagePermissionRequest.launch(Manifest.permission.SEND_SMS);
+                }
             }
         });
     }
@@ -127,11 +132,32 @@ public class Detail_Contact_Activity extends AppCompatActivity {
         }
     }
 
+    private void SendMessage(){
+        String phone = Phone_Contact_D.getText().toString();
+        if (!phone.equals("")){
+            Intent intent = new Intent(Intent.ACTION_SENDTO);
+            intent.setData(Uri.parse("smsto:"+phone));
+            intent.putExtra("sms_body", "");
+            startActivity(intent);
+        }else {
+            Toast.makeText(this, "There's no phone to text", Toast.LENGTH_SHORT).show();
+        }
+    }
+
     private ActivityResultLauncher<String> CallPermissionRequest =
             registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted ->{
                 if (isGranted){
                     CallContact();
                 }else {
+                    Toast.makeText(this, "Permission denied", Toast.LENGTH_SHORT).show();
+                }
+            });
+
+    private ActivityResultLauncher<String> MessagePermissionRequest =
+            registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted ->{
+                if (isGranted){
+                    SendMessage();
+                }else{
                     Toast.makeText(this, "Permission denied", Toast.LENGTH_SHORT).show();
                 }
             });
