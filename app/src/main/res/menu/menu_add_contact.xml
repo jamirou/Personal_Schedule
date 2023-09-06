@@ -15,7 +15,15 @@
         android:icon="@drawable/ic_delete_contact"
         android:title="@string/EmptyContacts"
         app:showAsAction="ifRoom">
+    </item>
+    <item
+        android:id="@+id/Search_Contact"
+        android:icon="@drawable/ic_search_contact"
+        android:title="@string/Search_Contact"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:showAsAction="ifRoom">
 
     </item>
+
 
 </menu>

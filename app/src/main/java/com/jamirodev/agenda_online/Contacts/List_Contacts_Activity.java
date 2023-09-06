@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -11,6 +12,7 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -185,6 +187,120 @@ public class List_Contacts_Activity extends AppCompatActivity {
         RVContacts.setAdapter(firebaseRecyclerAdapter);
     }
 
+    private void SearchContacts(String Name_Contact) {
+        Query query = DB_Users.child(user.getUid()).child("Contacts").orderByChild("name").startAt(Name_Contact).endAt(Name_Contact + "\uf8ff");
+        firebaseRecyclerOptions = new FirebaseRecyclerOptions.Builder<Contact>().setQuery(query, Contact.class).build();
+        firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Contact, ViewHolderContact>(firebaseRecyclerOptions) {
+            @Override
+            protected void onBindViewHolder(@NonNull ViewHolderContact viewHolderContact, int position, @NonNull Contact contact) {
+                viewHolderContact.SetDataContact(
+                        getApplicationContext(),
+                        contact.getId_contact(),
+                        contact.getUid_contact(),
+                        contact.getName(),
+                        contact.getLastname(),
+                        contact.getMail(),
+                        contact.getPhone(),
+                        contact.getAge(),
+                        contact.getHome(),
+                        contact.getImage()
+                );
+            }
+
+            @NonNull
+            @Override
+            public ViewHolderContact onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_contact, parent, false);
+                ViewHolderContact viewHolderContact = new ViewHolderContact(view);
+                viewHolderContact.setOnClickListener(new ViewHolderContact.ClickListener() {
+                    @Override
+                    public void onItemClick(View view, int position) {
+                        // Toast.makeText(List_Contacts_Activity.this, "On item click", Toast.LENGTH_SHORT).show();
+                        //GETTING SELECTED USER DATA
+                        String id_c = getItem(position).getId_contact();
+                        String uid_user = getItem(position).getUid_contact();
+                        String name_c = getItem(position).getName();
+                        String lastname_c = getItem(position).getLastname();
+                        String mail_c = getItem(position).getMail();
+                        String phone_c = getItem(position).getPhone();
+                        String age_c = getItem(position).getAge();
+                        String home_c = getItem(position).getHome();
+                        String image_c = getItem(position).getImage();
+
+                        Intent intent = new Intent(List_Contacts_Activity.this, Detail_Contact_Activity.class);
+                        intent.putExtra("id_c", id_c);
+                        intent.putExtra("uid_user", uid_user);
+                        intent.putExtra("name_c", name_c);
+                        intent.putExtra("lastname_c", lastname_c);
+                        intent.putExtra("mail_c", mail_c);
+                        intent.putExtra("phone_c", phone_c);
+                        intent.putExtra("age_c", age_c);
+                        intent.putExtra("home_c", home_c);
+                        intent.putExtra("image_c", image_c);
+                        startActivity(intent);
+                    }
+
+                    @Override
+                    public void onItemLongClick(View view, int position) {
+
+                        String id_c = getItem(position).getId_contact();
+                        String uid_user = getItem(position).getUid_contact();
+                        String name_c = getItem(position).getName();
+                        String lastname_c = getItem(position).getLastname();
+                        String mail_c = getItem(position).getMail();
+                        String phone_c = getItem(position).getPhone();
+                        String age_c = getItem(position).getAge();
+                        String home_c = getItem(position).getHome();
+                        String image_c = getItem(position).getImage();
+
+                        //String id_contact = getItem(position).getId_contact();
+                        Button Btn_delete_Contact, Btn_Update_Contact;
+
+                        dialog.setContentView(R.layout.dialog_box_options_contact);
+
+                        Btn_delete_Contact = dialog.findViewById(R.id.Btn_delete_Contact);
+                        Btn_Update_Contact = dialog.findViewById(R.id.Btn_Update_Contact);
+
+                        Btn_delete_Contact.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                //Toast.makeText(List_Contacts_Activity.this, "Delete contact", Toast.LENGTH_SHORT).show();
+                                DeleteContact(id_c);
+                                dialog.dismiss();
+                            }
+                        });
+
+                        Btn_Update_Contact.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent intent = new Intent(List_Contacts_Activity.this, Update_Contact_Activity.class);
+                                intent.putExtra("id_c", id_c);
+                                intent.putExtra("uid_user", uid_user);
+                                intent.putExtra("name_c", name_c);
+                                intent.putExtra("lastname_c", lastname_c);
+                                intent.putExtra("mail_c", mail_c);
+                                intent.putExtra("phone_c", phone_c);
+                                intent.putExtra("age_c", age_c);
+                                intent.putExtra("home_c", home_c);
+                                intent.putExtra("image_c", image_c);
+                                startActivity(intent);
+                                dialog.dismiss();
+                            }
+                        });
+
+                        dialog.show();
+
+                    }
+                });
+                return viewHolderContact;
+            }
+        };
+
+        RVContacts.setLayoutManager(new GridLayoutManager(List_Contacts_Activity.this, 2 ));
+        firebaseRecyclerAdapter.startListening();
+        RVContacts.setAdapter(firebaseRecyclerAdapter);
+    }
+
     private void DeleteContact(String idContact) {
         AlertDialog.Builder builder = new AlertDialog.Builder(List_Contacts_Activity.this);
         builder.setTitle("Delete");
@@ -269,6 +385,23 @@ public class List_Contacts_Activity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_add_contact, menu);
+        MenuItem item = menu.findItem(R.id.Search_Contact);
+        SearchView searchView = (SearchView) item.getActionView();
+        assert searchView != null;
+        searchView.setInputType(InputType.TYPE_TEXT_FLAG_CAP_WORDS);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                SearchContacts(query);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                SearchContacts(newText);
+                return false;
+            }
+        });
         return super.onCreateOptionsMenu(menu);
     }
 
