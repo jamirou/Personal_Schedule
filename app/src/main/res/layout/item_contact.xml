@@ -34,6 +34,7 @@
             <!--ID CONTACT-->
             <TextView
                 android:id="@+id/Id_C_Item"
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/nunitosans"
@@ -44,6 +45,7 @@
                 android:id="@+id/Uid_C_Item"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="gone"
                 android:fontFamily="@font/nunitosans"
                 android:text="@string/Uid_C_Item"
                 android:textSize="18sp" />
@@ -54,12 +56,15 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/nunitosans"
                 android:text="@string/Names_C_Item"
-                android:textSize="18sp" />
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textSize="20sp" />
             <!--LASTNAME CONTACT-->
             <TextView
                 android:id="@+id/LastName_C_Item"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:fontFamily="@font/nunitosans"
                 android:text="@string/LastName_C_Item"
                 android:textSize="18sp" />
@@ -69,12 +74,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/nunitosans"
+                android:gravity="center"
                 android:text="@string/Mail_C_Item"
-                android:textSize="18sp" />
+                android:textSize="13sp" />
             <!--PHONE CONTACT-->
             <TextView
                 android:id="@+id/Phone_C_Item"
                 android:layout_width="match_parent"
+                android:visibility="gone"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/nunitosans"
                 android:text="@string/Phone_C_Item"
@@ -83,6 +90,7 @@
             <TextView
                 android:id="@+id/Age_C_Item"
                 android:layout_width="match_parent"
+                android:visibility="gone"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/nunitosans"
                 android:text="@string/Age_C_Item"
@@ -91,6 +99,7 @@
             <TextView
                 android:id="@+id/Home_C_Item"
                 android:layout_width="match_parent"
+                android:visibility="gone"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/nunitosans"
                 android:text="@string/Home_C_Item"

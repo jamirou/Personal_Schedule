@@ -107,6 +107,11 @@
     <string name="Btn_ChooseGallery">Gallery</string>
     <string name="Btn_ChooseCamera">Camera</string>
 
+    <!--    DIALOG BOX VALIDATE REGISTER CONTACT-->
+    <string name="ValidateTXT">Name required</string>
+    <string name="Btn_Validate_register_C">OK</string>
+
+
     <!--    DIALOG VERIFIED ACCOUNT-->
     <string name="Verified_Account_TXT">Account verified</string>
     <string name="Understood_Verified">Understood</string>

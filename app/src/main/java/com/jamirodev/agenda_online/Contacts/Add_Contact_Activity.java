@@ -1,5 +1,6 @@
 package com.jamirodev.agenda_online.Contacts;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
@@ -30,11 +31,18 @@ public class Add_Contact_Activity extends AppCompatActivity {
     DatabaseReference DB_Users;
     FirebaseAuth firebaseAuth;
     FirebaseUser user;
+    Dialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_contact);
+
+        ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
+        actionBar.setTitle("Add contact");
+        actionBar.setDisplayShowHomeEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
         InitVariables();
         GetUidUser();
@@ -70,6 +78,8 @@ public class Add_Contact_Activity extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
         user = firebaseAuth.getCurrentUser();
+
+        dialog = new Dialog(Add_Contact_Activity.this);
     }
 
     private void GetUidUser() {
@@ -93,12 +103,12 @@ public class Add_Contact_Activity extends AppCompatActivity {
             public void onClick(View view) {
                 String country_code = ccp.getSelectedCountryCodeWithPlus();
                 String phone = Establish_Phone.getText().toString();
-                String code_country_phone = country_code+phone;
+                String code_country_phone = country_code + phone;
 
-                if (!phone.equals("")){
+                if (!phone.equals("")) {
                     Phone_C.setText(code_country_phone);
                     dialog_Establish_phone.dismiss();
-                }else {
+                } else {
                     Toast.makeText(Add_Contact_Activity.this, "Add phone number", Toast.LENGTH_SHORT).show();
                     dialog_Establish_phone.dismiss();
                 }
@@ -120,7 +130,7 @@ public class Add_Contact_Activity extends AppCompatActivity {
 
         String id_contact = DB_Users.push().getKey();
 
-        if (!uid.equals("") && !names.equals("")){
+        if (!uid.equals("") && !names.equals("")) {
             Contact contact = new Contact(
                     id_contact,
                     uid,
@@ -138,10 +148,34 @@ public class Add_Contact_Activity extends AppCompatActivity {
             DB_Users.child(user.getUid()).child(Name_DB).child(id_contact).setValue(contact);
             Toast.makeText(this, "Added contact", Toast.LENGTH_SHORT).show();
             onBackPressed();
-        }
-        else {
-            Toast.makeText(this, "Name is required", Toast.LENGTH_SHORT).show();
+        } else {
+//            Toast.makeText(this, "Name is required", Toast.LENGTH_SHORT).show();
+            ValidateRegisterContact();
         }
     }
 
+    private void ValidateRegisterContact() {
+        Button Btn_Validate_register_C;
+
+        dialog.setContentView(R.layout.dalogbox_validate_register_contact);
+
+        Btn_Validate_register_C = dialog.findViewById(R.id.Btn_Validate_register_C);
+
+        Btn_Validate_register_C.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
+        dialog.setCanceledOnTouchOutside(false);
+
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return super.onSupportNavigateUp();
+    }
 }

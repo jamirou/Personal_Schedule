@@ -64,7 +64,7 @@ public class ViewHolderContact extends RecyclerView.ViewHolder {
         Id_C_Item = mView.findViewById(R.id.Id_C_Item);
         Uid_C_Item = mView.findViewById(R.id.Uid_C_Item);
         Names_C_Item = mView.findViewById(R.id.Names_C_Item);
-        LastName_C_Item = mView.findViewById(R.id.Last_Name_Profile);
+        LastName_C_Item = mView.findViewById(R.id.LastName_C_Item);
         Mail_C_Item = mView.findViewById(R.id.Mail_C_Item);
         Phone_C_Item = mView.findViewById(R.id.Phone_C_Item);
         Age_C_Item = mView.findViewById(R.id.Age_C_Item);
