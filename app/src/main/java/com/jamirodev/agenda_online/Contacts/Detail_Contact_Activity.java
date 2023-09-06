@@ -4,6 +4,8 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,6 +18,7 @@ public class Detail_Contact_Activity extends AppCompatActivity {
     TextView Id_Contact_D, Uid_User_D, Name_Contact_D, Lastname_Contact_D, Mail_Contact_D, Age_Contact_D, Phone_Contact_D, Home_Contact_D;
 
     String id_c, uid_user, name_c, lastname_c, mail_c, age_c, phone_c, home_c;
+    Button Call_C, Message_C;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +35,20 @@ public class Detail_Contact_Activity extends AppCompatActivity {
         RecoverDataContact();
         SetDataContact();
         GetImageContact();
+
+        Call_C.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(Detail_Contact_Activity.this, "Call contact", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        Message_C.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(Detail_Contact_Activity.this, "Send Message", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void InitVariables() {
@@ -44,6 +61,9 @@ public class Detail_Contact_Activity extends AppCompatActivity {
         Age_Contact_D = findViewById(R.id.Age_Contact_D);
         Phone_Contact_D = findViewById(R.id.Phone_Contact_D);
         Home_Contact_D = findViewById(R.id.Home_Contact_D);
+
+        Call_C = findViewById(R.id.Call_C);
+        Message_C = findViewById(R.id.Message_C);
     }
 
     private void RecoverDataContact(){

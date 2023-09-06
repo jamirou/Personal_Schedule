@@ -205,6 +205,8 @@
     <string name="Home_Contact_D"> -- </string>
     <string name="Btn_UpdateContact_D"> -- </string>
     <string name="Detail_ContactTXT">Contact detail</string>
+    <string name="Call_C">Call</string>
+    <string name="Message_C">Message</string>
 
     <!--    UPDATE CONTACT-->
     <string name="Id_Contact_Update"> -- </string>

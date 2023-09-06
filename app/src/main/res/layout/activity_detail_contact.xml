@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".Contacts.Detail_Contact_Activity">
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -42,75 +42,143 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/nunitosans"
                 android:text="@string/Detail_ContactTXT"
                 android:textSize="25sp"
-                android:textStyle="bold"
-                android:layout_gravity="center"
-                android:fontFamily="@font/nunitosans"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/Id_Contact_D"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:visibility="gone"
                 android:fontFamily="@font/nunitosans"
-                android:text="@string/Id_Contact_D" />
+                android:text="@string/Id_Contact_D"
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/Uid_User_D"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:visibility="gone"
                 android:fontFamily="@font/nunitosans"
-                android:text="@string/Uid_User_D" />
+                android:text="@string/Uid_User_D"
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/Name_Contact_D"
                 android:layout_width="wrap_content"
-                android:textSize="20sp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/nunitosans"
-                android:text="@string/Name_Contact_D" />
+                android:text="@string/Name_Contact_D"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/Lastname_Contact_D"
                 android:layout_width="wrap_content"
-                android:textSize="20sp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/nunitosans"
-                android:text="@string/Lastname_Contact_D" />
+                android:text="@string/Lastname_Contact_D"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/Mail_Contact_D"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
                 android:fontFamily="@font/nunitosans"
-                android:text="@string/Mail_Contact_D" />
+                android:text="@string/Mail_Contact_D"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/Age_Contact_D"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
                 android:fontFamily="@font/nunitosans"
-                android:text="@string/Age_Contact_D" />
+                android:text="@string/Age_Contact_D"
+                android:textSize="20sp" />
 
-            <TextView
-                android:id="@+id/Phone_Contact_D"
-                android:layout_width="wrap_content"
-                android:textSize="20sp"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/nunitosans"
-                android:text="@string/Phone_Contact_D" />
 
             <TextView
                 android:id="@+id/Home_Contact_D"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
                 android:fontFamily="@font/nunitosans"
-                android:text="@string/Home_Contact_D" />
+                android:text="@string/Home_Contact_D"
+                android:textSize="20sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/black" />
+
+
+            <TextView
+                android:id="@+id/Phone_Contact_D"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:drawablePadding="10dp"
+                android:fontFamily="@font/nunitosans"
+                android:text="@string/Phone_Contact_D"
+                android:textSize="20sp"
+                app:drawableStartCompat="@drawable/ic_phone" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="2"
+                android:orientation="horizontal">
+
+                <!--CALL CONTACT -->
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="45dp"
+                        android:src="@drawable/call_contact"
+                        android:layout_height="45dp" />
+
+                    <Button
+                        android:id="@+id/Call_C"
+                        android:backgroundTint="@color/color_Button"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="wrap_content"
+                        android:text="@string/Call_C"
+                        android:layout_height="wrap_content" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <!--SEND MESSAGE TO CONTACT-->
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="45dp"
+                        android:src="@drawable/send_message"
+                        android:layout_height="45dp" />
+
+                    <Button
+                        android:id="@+id/Message_C"
+                        android:layout_marginTop="5dp"
+                        android:backgroundTint="@color/color_Button"
+                        android:layout_width="wrap_content"
+                        android:text="@string/Message_C"
+                        android:layout_height="wrap_content" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
 
 
         </androidx.appcompat.widget.LinearLayoutCompat>
