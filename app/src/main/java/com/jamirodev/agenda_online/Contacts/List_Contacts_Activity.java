@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,6 +15,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -36,6 +38,7 @@ public class List_Contacts_Activity extends AppCompatActivity {
     FirebaseUser user;
     FirebaseRecyclerAdapter<Contact, ViewHolderContact> firebaseRecyclerAdapter;
     FirebaseRecyclerOptions<Contact> firebaseRecyclerOptions;
+    Dialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +57,8 @@ public class List_Contacts_Activity extends AppCompatActivity {
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         DB_Users = firebaseDatabase.getReference("Users");
+
+        dialog = new Dialog(List_Contacts_Activity.this);
 
         firebaseAuth = FirebaseAuth.getInstance();
         user = firebaseAuth.getCurrentUser();
@@ -116,7 +121,32 @@ public class List_Contacts_Activity extends AppCompatActivity {
 
                     @Override
                     public void onItemLongClick(View view, int position) {
-                        Toast.makeText(List_Contacts_Activity.this, "On item log click", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(List_Contacts_Activity.this, "On item log click", Toast.LENGTH_SHORT).show();
+                        Button Btn_delete_Contact, Btn_Update_Contact;
+
+                        dialog.setContentView(R.layout.dialog_box_options_contact);
+
+                        Btn_delete_Contact = dialog.findViewById(R.id.Btn_delete_Contact);
+                        Btn_Update_Contact = dialog.findViewById(R.id.Btn_Update_Contact);
+                        
+                        Btn_delete_Contact.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Toast.makeText(List_Contacts_Activity.this, "Delete contact", Toast.LENGTH_SHORT).show();
+                                dialog.dismiss();
+                            }
+                        });
+
+                        Btn_Update_Contact.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Toast.makeText(List_Contacts_Activity.this, "Update contact", Toast.LENGTH_SHORT).show();
+                                dialog.dismiss();
+                            }
+                        });
+
+                        dialog.show();
+
                     }
                 });
                 return viewHolderContact;
