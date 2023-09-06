@@ -5,12 +5,14 @@ import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.app.Activity;
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -23,6 +25,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -31,9 +36,14 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 import com.hbb20.CountryCodePicker;
 import com.jamirodev.agenda_online.Profile.Profile_User_Activity;
 import com.jamirodev.agenda_online.R;
+
+import java.util.HashMap;
 
 public class Update_Contact_Activity extends AppCompatActivity {
 
@@ -45,13 +55,19 @@ public class Update_Contact_Activity extends AppCompatActivity {
     Dialog dialog_Establish_phone;
     FirebaseAuth firebaseAuth;
     FirebaseUser user;
-
     Uri imageUri = null;
+    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_contact);
+
+        ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
+        actionBar.setTitle("Edit contact");
+        actionBar.setDisplayShowHomeEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
         InitViews();
         RecoverData();
@@ -84,6 +100,10 @@ public class Update_Contact_Activity extends AppCompatActivity {
                 }
             }
         });
+
+        progressDialog = new ProgressDialog(Update_Contact_Activity.this);
+        progressDialog.setTitle("Please wait");
+        progressDialog.setCanceledOnTouchOutside(false);
 
     }
 
@@ -207,6 +227,61 @@ public class Update_Contact_Activity extends AppCompatActivity {
         });
     }
 
+    private void UploadImageStorage() {
+        progressDialog.setMessage("Uploading image");
+        progressDialog.show();
+        String id_c = getIntent().getStringExtra("id_c");
+
+        String FolderImagesContact = "ContactProfileImages/";
+        String NameImage = FolderImagesContact + id_c;
+        StorageReference reference = FirebaseStorage.getInstance().getReference(NameImage);
+        reference.putFile(imageUri)
+                .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                    @Override
+                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                        Task<Uri> uriTask = taskSnapshot.getStorage().getDownloadUrl();
+                        while (!uriTask.isSuccessful());
+                        String UriIMAGE = ""+uriTask.getResult();
+                        UpdateImageDB(UriIMAGE);
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(Update_Contact_Activity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
+
+    private void UpdateImageDB(String uriIMAGE) {
+        progressDialog.setMessage("Uploading");
+        progressDialog.show();
+
+        String id_c = getIntent().getStringExtra("id_c");
+
+        HashMap<String, Object> hashMap = new HashMap<>();
+        if (imageUri != null){
+            hashMap.put("image", ""+uriIMAGE);
+        }
+
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Users");
+        databaseReference.child(user.getUid()).child("Contacts").child(id_c)
+                .updateChildren(hashMap)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        progressDialog.dismiss();
+                        Toast.makeText(Update_Contact_Activity.this, "Updated image", Toast.LENGTH_SHORT).show();
+                        onBackPressed();
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        progressDialog.dismiss();
+                        Toast.makeText(Update_Contact_Activity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
+
     private void SelectGalleryImage() {
         Intent intent = new Intent(Intent.ACTION_PICK);
         intent.setType("image/*");
@@ -222,6 +297,7 @@ public class Update_Contact_Activity extends AppCompatActivity {
                         Intent data = result.getData();
                         imageUri = data.getData();
                         Image_C_U.setImageURI(imageUri);
+                        UploadImageStorage();
                     }else {
                         Toast.makeText(Update_Contact_Activity.this, "Canceled by user", Toast.LENGTH_SHORT).show();
                     }
@@ -239,4 +315,9 @@ public class Update_Contact_Activity extends AppCompatActivity {
             }
     );
 
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return super.onSupportNavigateUp();
+    }
 }
