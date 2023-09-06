@@ -164,7 +164,7 @@
     <string name="Home_Profile">Home</string>
     <string name="College_Profile">College</string>
     <string name="Profession_Profile">Profession</string>
-    <string name="Save_Data">Save data</string>
+    <string name="Save_Data">Save</string>
     <string name="Birthdate_Profile">Birthdate</string>
 
     <string name="BtnChooseImage">Select Image</string>
@@ -187,4 +187,16 @@
     <string name="Age_C">Age</string>
     <string name="Home_C">Home</string>
     <string name="Btn_Save_Contact">Save contact</string>
+
+    <!--    CONTACT DETAIL-->
+    <string name="Id_Contact_D"> -- </string>
+    <string name="Uid_User_D"> -- </string>
+    <string name="Name_Contact_D"> -- </string>
+    <string name="Lastname_Contact_D"> -- </string>
+    <string name="Mail_Contact_D"> -- </string>
+    <string name="Age_Contact_D"> -- </string>
+    <string name="Phone_Contact_D"> -- </string>
+    <string name="Home_Contact_D"> -- </string>
+    <string name="Btn_UpdateContact_D"> -- </string>
+    <string name="Detail_ContactTXT">Contact detail</string>
 </resources>

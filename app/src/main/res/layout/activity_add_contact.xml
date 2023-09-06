@@ -17,15 +17,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/nunitosans"
-            android:visibility="gone"
             android:text="@string/Uid_User_C"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:visibility="gone" />
 
         <com.airbnb.lottie.LottieAnimationView
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
             android:layout_width="130dp"
             android:layout_height="130dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
             app:lottie_autoPlay="true"
             app:lottie_fileName="newcontact.json"
             app:lottie_imageAssetsFolder="assets"
@@ -38,7 +38,7 @@
             android:layout_marginTop="10dp"
             android:fontFamily="@font/nunitosans"
             android:hint="@string/Names_C"
-            android:inputType="textPersonName" />
+            android:inputType="textCapWords|textPersonName" />
 
         <EditText
             android:id="@+id/Lastname_C"
@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/nunitosans"
             android:hint="@string/Lastname_C"
-            android:inputType="textPersonName" />
+            android:inputType="textCapWords|textPersonName" />
 
         <EditText
             android:id="@+id/Mail_C"
@@ -94,7 +94,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/nunitosans"
             android:hint="@string/Home_C"
-            android:inputType="text" />
+            android:inputType="textCapWords|text" />
 
         <Button
             android:id="@+id/Btn_Save_Contact"

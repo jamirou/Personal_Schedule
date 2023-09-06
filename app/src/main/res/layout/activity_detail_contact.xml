@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Contacts.Detail_Contact_Activity">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+            <!--BACKGROUND CONTACT-->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="210dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/background_contact" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/Image_Contact_D"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="120dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/contactuser" />
+
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Detail_ContactTXT"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:fontFamily="@font/nunitosans"/>
+
+            <TextView
+                android:id="@+id/Id_Contact_D"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:fontFamily="@font/nunitosans"
+                android:text="@string/Id_Contact_D" />
+
+            <TextView
+                android:id="@+id/Uid_User_D"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:fontFamily="@font/nunitosans"
+                android:text="@string/Uid_User_D" />
+
+            <TextView
+                android:id="@+id/Name_Contact_D"
+                android:layout_width="wrap_content"
+                android:textSize="20sp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunitosans"
+                android:text="@string/Name_Contact_D" />
+
+            <TextView
+                android:id="@+id/Lastname_Contact_D"
+                android:layout_width="wrap_content"
+                android:textSize="20sp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunitosans"
+                android:text="@string/Lastname_Contact_D" />
+
+            <TextView
+                android:id="@+id/Mail_Contact_D"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:fontFamily="@font/nunitosans"
+                android:text="@string/Mail_Contact_D" />
+
+            <TextView
+                android:id="@+id/Age_Contact_D"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:fontFamily="@font/nunitosans"
+                android:text="@string/Age_Contact_D" />
+
+            <TextView
+                android:id="@+id/Phone_Contact_D"
+                android:layout_width="wrap_content"
+                android:textSize="20sp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunitosans"
+                android:text="@string/Phone_Contact_D" />
+
+            <TextView
+                android:id="@+id/Home_Contact_D"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:fontFamily="@font/nunitosans"
+                android:text="@string/Home_Contact_D" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</ScrollView>

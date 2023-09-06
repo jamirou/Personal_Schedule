@@ -89,7 +89,29 @@ public class List_Contacts_Activity extends AppCompatActivity {
                 viewHolderContact.setOnClickListener(new ViewHolderContact.ClickListener() {
                     @Override
                     public void onItemClick(View view, int position) {
-                        Toast.makeText(List_Contacts_Activity.this, "On item click", Toast.LENGTH_SHORT).show();
+                       // Toast.makeText(List_Contacts_Activity.this, "On item click", Toast.LENGTH_SHORT).show();
+                        //GETTING SELECTED USER DATA
+                        String id_c = getItem(position).getId_contact();
+                        String uid_user = getItem(position).getUid_contact();
+                        String name_c = getItem(position).getName();
+                        String lastname_c = getItem(position).getLastname();
+                        String mail_c = getItem(position).getMail();
+                        String phone_c = getItem(position).getPhone();
+                        String age_c = getItem(position).getAge();
+                        String home_c = getItem(position).getHome();
+                        String image_c = getItem(position).getImage();
+
+                        Intent intent = new Intent(List_Contacts_Activity.this, Detail_Contact_Activity.class);
+                        intent.putExtra("id_c", id_c);
+                        intent.putExtra("uid_user", uid_user);
+                        intent.putExtra("name_c", name_c);
+                        intent.putExtra("lastname_c", lastname_c);
+                        intent.putExtra("mail_c", mail_c);
+                        intent.putExtra("phone_c", phone_c);
+                        intent.putExtra("age_c", age_c);
+                        intent.putExtra("home_c", home_c);
+                        intent.putExtra("image_c", image_c);
+                        startActivity(intent);
                     }
 
                     @Override
