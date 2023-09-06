@@ -204,4 +204,20 @@
     <string name="Home_Contact_D"> -- </string>
     <string name="Btn_UpdateContact_D"> -- </string>
     <string name="Detail_ContactTXT">Contact detail</string>
+
+    <!--    UPDATE CONTACT-->
+    <string name="Id_Contact_Update"> -- </string>
+    <string name="Uid_Contact_Update"> -- </string>
+    <string name="Name_Contact_Update"> -- </string>
+    <string name="Lastname_Contact_Update"> -- </string>
+    <string name="Mail_Contact_Update"> -- </string>
+    <string name="Phone_Contact_Update"> -- </string>
+    <string name="Age_Contact_Update"> -- </string>
+    <string name="Home_Contact_Update"> -- </string>
+    <string name="Update_Contact_Update">Update</string>
+
+
+
+
+
 </resources>

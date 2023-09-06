@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Contacts.Update_Contact_Activity">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="210dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/background_contact" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/Image_C_U"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="120dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/contactuser" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/Update_Image_C_U"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="130dp"
+                android:layout_marginTop="230dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/edit_image" />
+
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/Id_Contact_Update"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunitosans"
+                android:text="@string/Id_Contact_Update" />
+
+            <TextView
+                android:id="@+id/Uid_Contact_Update"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunitosans"
+                android:text="@string/Uid_Contact_Update" />
+
+            <EditText
+                android:id="@+id/Name_Contact_Update"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/nunitosans"
+                android:hint="@string/Name_Contact_Update"
+                android:inputType="textCapWords|textPersonName" />
+
+            <EditText
+                android:id="@+id/Lastname_Contact_Update"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunitosans"
+                android:hint="@string/Lastname_Contact_Update"
+                android:inputType="textCapWords|textPersonName" />
+
+            <EditText
+                android:id="@+id/Mail_Contact_Update"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunitosans"
+                android:hint="@string/Mail_Contact_Update"
+                android:inputType="textEmailAddress" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/Phone_Contact_Update"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/nunitosans"
+                    android:inputType="phone"
+                    android:text="@string/Phone_Contact_Update"
+                    android:textSize="20sp" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/Update_Phone_C_U"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="15dp"
+                    android:src="@drawable/call"/>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <EditText
+                android:id="@+id/Age_Contact_Update"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunitosans"
+                android:hint="@string/Age_Contact_Update"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/Home_Contact_Update"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunitosans"
+                android:hint="@string/Home_Contact_Update"
+                android:inputType="textCapWords|text" />
+
+            <Button
+                android:id="@+id/Update_Contact_Update"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/color_Button"
+                android:fontFamily="@font/nunitosans"
+                android:text="@string/Update_Contact_Update" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</RelativeLayout>

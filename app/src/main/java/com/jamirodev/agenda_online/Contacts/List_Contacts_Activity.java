@@ -126,8 +126,18 @@ public class List_Contacts_Activity extends AppCompatActivity {
 
                     @Override
                     public void onItemLongClick(View view, int position) {
-                        String id_contact = getItem(position).getId_contact();
-                        //Toast.makeText(List_Contacts_Activity.this, "On item log click", Toast.LENGTH_SHORT).show();
+
+                        String id_c = getItem(position).getId_contact();
+                        String uid_user = getItem(position).getUid_contact();
+                        String name_c = getItem(position).getName();
+                        String lastname_c = getItem(position).getLastname();
+                        String mail_c = getItem(position).getMail();
+                        String phone_c = getItem(position).getPhone();
+                        String age_c = getItem(position).getAge();
+                        String home_c = getItem(position).getHome();
+                        String image_c = getItem(position).getImage();
+
+                        //String id_contact = getItem(position).getId_contact();
                         Button Btn_delete_Contact, Btn_Update_Contact;
 
                         dialog.setContentView(R.layout.dialog_box_options_contact);
@@ -139,7 +149,7 @@ public class List_Contacts_Activity extends AppCompatActivity {
                             @Override
                             public void onClick(View view) {
                                 //Toast.makeText(List_Contacts_Activity.this, "Delete contact", Toast.LENGTH_SHORT).show();
-                                DeleteContact(id_contact);
+                                DeleteContact(id_c);
                                 dialog.dismiss();
                             }
                         });
@@ -147,7 +157,17 @@ public class List_Contacts_Activity extends AppCompatActivity {
                         Btn_Update_Contact.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                Toast.makeText(List_Contacts_Activity.this, "Update contact", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(List_Contacts_Activity.this, Update_Contact_Activity.class);
+                                intent.putExtra("id_c", id_c);
+                                intent.putExtra("uid_user", uid_user);
+                                intent.putExtra("name_c", name_c);
+                                intent.putExtra("lastname_c", lastname_c);
+                                intent.putExtra("mail_c", mail_c);
+                                intent.putExtra("phone_c", phone_c);
+                                intent.putExtra("age_c", age_c);
+                                intent.putExtra("home_c", home_c);
+                                intent.putExtra("image_c", image_c);
+                                startActivity(intent);
                                 dialog.dismiss();
                             }
                         });
