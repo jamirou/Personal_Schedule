@@ -6,10 +6,13 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -72,7 +75,13 @@ public class Update_Contact_Activity extends AppCompatActivity {
         Update_Image_C_U.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SelectGalleryImage();
+                if (ContextCompat.checkSelfPermission(Update_Contact_Activity.this,
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED){
+                    SelectGalleryImage();
+                }
+                else {
+                    RequestPermissionGallery.launch(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                }
             }
         });
 
@@ -216,6 +225,16 @@ public class Update_Contact_Activity extends AppCompatActivity {
                     }else {
                         Toast.makeText(Update_Contact_Activity.this, "Canceled by user", Toast.LENGTH_SHORT).show();
                     }
+                }
+            }
+    );
+
+    private  ActivityResultLauncher<String> RequestPermissionGallery = registerForActivityResult(
+            new ActivityResultContracts.RequestPermission(), isGranted -> {
+                if (isGranted){
+                    SelectGalleryImage();
+                }else {
+                    Toast.makeText(this, "Permission denied", Toast.LENGTH_SHORT).show();
                 }
             }
     );
