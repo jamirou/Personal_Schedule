@@ -49,7 +49,7 @@ public class MainMenuActivity extends AppCompatActivity {
     ProgressDialog progressDialog;
     LinearLayoutCompat Linear_Names, Linear_Mail, Linear_Verification;
     DatabaseReference Users;
-    Dialog dialog_verified_account;
+    Dialog dialog_verified_account, dialog_Info;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,6 +65,7 @@ public class MainMenuActivity extends AppCompatActivity {
         MainAccountStatus = findViewById(R.id.MainAccountStatus);
         ProgressBarData = findViewById(R.id.ProgressBarData);
         dialog_verified_account = new Dialog(this);
+        dialog_Info = new Dialog(this);
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Please wait...");
@@ -144,7 +145,7 @@ public class MainMenuActivity extends AppCompatActivity {
         About.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainMenuActivity.this, "About", Toast.LENGTH_SHORT).show();
+                Information();
             }
         });
 
@@ -226,6 +227,22 @@ public class MainMenuActivity extends AppCompatActivity {
         });
         dialog_verified_account.show();
         dialog_verified_account.setCanceledOnTouchOutside(false);
+    }
+
+    private void Information() {
+        Button CloseInfo;
+
+        dialog_Info.setContentView(R.layout.dialog_box_information);
+        CloseInfo = dialog_Info.findViewById(R.id.CloseInfo);
+
+        CloseInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog_Info.dismiss();
+            }
+        });
+        dialog_Info.show();
+        dialog_Info.setCanceledOnTouchOutside(false);
     }
 
     @Override

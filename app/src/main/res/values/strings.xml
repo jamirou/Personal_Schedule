@@ -219,8 +219,10 @@
     <string name="Home_Contact_Update"> -- </string>
     <string name="Update_Contact_Update">Update</string>
 
-
-
-
+    <!--    APP INFORMATION-->
+    <string name="Developer">Developed by Jamiro</string>
+    <string name="MailSupport">DevJamiro@gmail.com </string>
+    <string name="Version">Version: 0.1</string>
+    <string name="CloseInfo">Close</string>
 
 </resources>
