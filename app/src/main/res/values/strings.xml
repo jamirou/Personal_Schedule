@@ -55,6 +55,7 @@
     <string name="Empty_all_notes">Empty all notes</string>
     <string name="Filter_Notes">Filter notes</string>
     <string name="Profile_User">Profile</string>
+    <string name="Configuration">Configuration</string>
     <string name="Update_Password">Update password</string>
     <string name="Add_contact">Add contact</string>
     <string name="EmptyContacts">Delete all contacts</string>
@@ -124,7 +125,6 @@
     <string name="All_Notes">All</string>
     <string name="Finished_notes">Finished</string>
     <string name="Notes_NotFinished">Not finished</string>
-    
 
 
     <!--    DIALOG VERIFIED ACCOUNT-->
@@ -233,5 +233,10 @@
     <string name="MailSupport">DevJamiro@gmail.com </string>
     <string name="Version">Version: 0.1</string>
     <string name="CloseInfo">Close</string>
+
+    <!--    CONFIGURATIONS-->
+    <string name="Uid_delete">User uid</string>
+    <string name="DeleteAccount">Delete account</string>
+
 
 </resources>
