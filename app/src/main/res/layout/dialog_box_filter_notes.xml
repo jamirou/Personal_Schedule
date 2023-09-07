@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="300dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:padding="10dp"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
     android:layout_gravity="center"
-    android:layout_height="wrap_content">
+    android:orientation="vertical"
+    android:padding="10dp">
 
     <com.airbnb.lottie.LottieAnimationView
         android:layout_width="match_parent"
@@ -15,42 +15,45 @@
         app:lottie_fileName="filter.json"
         app:lottie_imageAssetsFolder="assets"
         app:lottie_loop="true" />
-    
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/nunitosans"
         android:text="@string/Filter_NotesTXT"
         android:textSize="20sp"
-        android:textStyle="bold"
-        android:fontFamily="@font/nunitosans"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"/>
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/All_Notes"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
-        android:text="@string/All_Notes"
-        android:fontFamily="@font/nunitosans"
+        android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:layout_gravity="center"/>
+        android:backgroundTint="@color/color_Button"
+        android:fontFamily="@font/nunitosans"
+        android:text="@string/All_Notes" />
 
     <Button
         android:id="@+id/Finished_notes"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
-        android:text="@string/Finished_notes"
-        android:fontFamily="@font/nunitosans"
+        android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:layout_gravity="center"/>
+        android:backgroundTint="@color/color_pri"
+        android:fontFamily="@font/nunitosans"
+        android:text="@string/Finished_notes" />
 
     <Button
         android:id="@+id/Notes_NotFinished"
-        android:text="@string/Notes_NotFinished"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/nunitosans"
+        android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:layout_gravity="center"/>
+        android:backgroundTint="@color/color_pri"
+        android:fontFamily="@font/nunitosans"
+        android:text="@string/Notes_NotFinished" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

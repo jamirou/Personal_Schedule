@@ -47,7 +47,7 @@ public class List_Notes_Activity extends AppCompatActivity {
     FirebaseRecyclerAdapter<Note, ViewHolder_Note> firebaseRecyclerAdapter;
     FirebaseRecyclerOptions<Note> options;
 
-    Dialog dialog;
+    Dialog dialog, dialog_filter;
 
     FirebaseAuth auth;
     FirebaseUser user;
@@ -68,6 +68,8 @@ public class List_Notes_Activity extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
+
+        dialog_filter = new Dialog(List_Notes_Activity.this);
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         DB_Users = firebaseDatabase.getReference("Users");
@@ -275,6 +277,11 @@ public class List_Notes_Activity extends AppCompatActivity {
         if (item.getItemId() == R.id.Empty_all_notes) {
             Empty_Notes_Register();
         }
+
+        if (item.getItemId() == R.id.Filter_Notes){
+            FilterNotes();
+        }
+
         return super.onOptionsItemSelected(item);
     }
 
@@ -285,6 +292,43 @@ public class List_Notes_Activity extends AppCompatActivity {
         if (firebaseRecyclerAdapter != null) {
             firebaseRecyclerAdapter.startListening();
         }
+    }
+
+    private void FilterNotes() {
+        Button All_Notes, Finished_notes, Notes_NotFinished;
+
+        dialog_filter.setContentView(R.layout.dialog_box_filter_notes);
+
+        All_Notes = dialog_filter.findViewById(R.id.All_Notes);
+        Finished_notes = dialog_filter.findViewById(R.id.Finished_notes);
+        Notes_NotFinished = dialog_filter.findViewById(R.id.Notes_NotFinished);
+
+        All_Notes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(List_Notes_Activity.this, "All notes", Toast.LENGTH_SHORT).show();
+                dialog_filter.dismiss();
+            }
+        });
+        
+        Finished_notes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(List_Notes_Activity.this, "Finished notes", Toast.LENGTH_SHORT).show();
+                dialog_filter.dismiss();
+            }
+        });
+        
+        Notes_NotFinished.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(List_Notes_Activity.this, "Notes not finished", Toast.LENGTH_SHORT).show();
+                dialog_filter.dismiss();
+            }
+        });
+
+        dialog_filter.show();
+
     }
 
     @Override
