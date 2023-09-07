@@ -19,6 +19,7 @@
     <color name="color_profile">#FFBEADFA</color>
     <color name="color_Button">#FFBEADFA</color>
     <color name="color_Verified_Button">#FFBEADFA</color>
+    <color name="Icon">#DD9374FF</color>
 
 
 </resources>

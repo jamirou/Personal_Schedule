@@ -68,6 +68,7 @@
                 android:fontFamily="@font/nunitosans"
                 android:text="@string/Uid_Profile"
                 android:textSize="18sp"
+                android:visibility="gone"
                 app:drawableStartCompat="@drawable/ic_uid_profile_user" />
             <!--NAMES-->
             <EditText
@@ -127,21 +128,22 @@
                 android:orientation="horizontal">
 
                 <!--PHONE-->
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/Edit_Phone"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/call" />
+
                 <TextView
                     android:id="@+id/Phone_Profile"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:layout_marginStart="15dp"
                     android:fontFamily="@font/nunitosans"
                     android:hint="@string/Phone_Profile"
                     android:textSize="18sp" />
 
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/Edit_Phone"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:layout_marginStart="15dp"
-                    android:src="@drawable/call" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -151,21 +153,22 @@
                 android:layout_marginTop="10dp"
                 android:orientation="horizontal">
 
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/Edit_Date"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/calendary" />
+
                 <TextView
                     android:id="@+id/Birthdate_Profile"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:layout_marginStart="15dp"
                     android:fontFamily="@font/nunitosans"
                     android:text="@string/Birthdate_Profile"
                     android:textSize="18sp" />
 
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/Edit_Date"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:layout_marginStart="15dp"
-                    android:src="@drawable/calendary" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 

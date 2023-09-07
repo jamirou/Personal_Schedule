@@ -23,7 +23,6 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/color_pri"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"
         android:fontFamily="@font/nunitosans"
         android:text="@string/Understood_Verified" />
 

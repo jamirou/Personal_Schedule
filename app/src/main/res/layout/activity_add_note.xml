@@ -46,6 +46,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:visibility="gone"
                 android:textSize="20sp"
                 android:layout_marginStart="10dp"
                 android:fontFamily="@font/nunitosans"
@@ -61,7 +62,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textStyle="bold"
-            android:layout_marginTop="5dp"
+            android:visibility="gone"
             android:fontFamily="@font/nunitosans"
             android:hint="@string/Date_ActualHour"
             android:textSize="18sp" />
@@ -101,7 +102,7 @@
                 android:backgroundTint="@color/color_Button"
                 android:text="@string/Btn_calendar"
                 android:textColor="@color/black"
-                android:drawableStart="@drawable/ic_calendar" />
+                android:drawableEnd="@drawable/ic_calendar" />
 
 
             <!--            DATE VISUALIZATION-->
@@ -120,6 +121,7 @@
         <TextView
             android:id="@+id/State"
             android:layout_width="wrap_content"
+            android:visibility="gone"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/nunitosans"

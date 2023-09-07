@@ -27,6 +27,7 @@
                 <androidx.appcompat.widget.AppCompatImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
+                    android:visibility="gone"
                     android:layout_gravity="center"
                     android:src="@drawable/ic_note_detail" />
                 <!--TXT-->
@@ -34,6 +35,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:visibility="gone"
                     android:layout_marginStart="10dp"
                     android:fontFamily="@font/nunitosans"
                     android:text="@string/Id_Note_Detail_TXT"
@@ -46,6 +48,7 @@
                 android:id="@+id/Id_Note_Detail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:visibility="gone"
                 android:layout_gravity="center"
                 android:fontFamily="@font/nunitosans"
                 android:text="@string/Id_Note_Detail"
@@ -62,12 +65,14 @@
                 <androidx.appcompat.widget.AppCompatImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
+                    android:visibility="gone"
                     android:layout_gravity="center"
                     android:src="@drawable/ic_uid_user_detail" />
                 <!--TXT-->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:visibility="gone"
                     android:layout_gravity="center"
                     android:layout_marginStart="10dp"
                     android:fontFamily="@font/nunitosans"
@@ -82,6 +87,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:visibility="gone"
                 android:fontFamily="@font/nunitosans"
                 android:text="@string/Uid_User_Detail"
                 android:textSize="17sp"
@@ -96,6 +102,7 @@
                 <!--MAIL ICON-->
                 <androidx.appcompat.widget.AppCompatImageView
                     android:layout_width="30dp"
+                    android:visibility="gone"
                     android:layout_height="30dp"
                     android:layout_gravity="center"
                     android:src="@drawable/ic_mail_user_detail" />
@@ -103,6 +110,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:visibility="gone"
                     android:layout_gravity="center"
                     android:layout_marginStart="10dp"
                     android:fontFamily="@font/nunitosans"
@@ -117,6 +125,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:visibility="gone"
                 android:fontFamily="@font/nunitosans"
                 android:text="@string/Mail_User_Detail"
                 android:textSize="17sp"
@@ -132,6 +141,7 @@
                 <androidx.appcompat.widget.AppCompatImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
+                    android:visibility="gone"
                     android:layout_gravity="center"
                     android:src="@drawable/ic_title_note_detail" />
                 <!--TXT-->
@@ -139,23 +149,25 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:visibility="gone"
                     android:layout_marginStart="10dp"
                     android:fontFamily="@font/nunitosans"
                     android:text="@string/Title_Detail_TXT"
                     android:textSize="20sp" />
+                <!--TITLE DATA-->
+                <TextView
+                    android:id="@+id/Title_Detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/nunitosans"
+                    android:text="@string/Title_Detail"
+                    android:textSize="35sp"
+                    android:textStyle="bold" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
-            <!--TITLE DATA-->
-            <TextView
-                android:id="@+id/Title_Detail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:fontFamily="@font/nunitosans"
-                android:text="@string/Title_Detail"
-                android:textSize="17sp"
-                android:textStyle="bold" />
+
 
             <!--DESCRIPTION ICON TV-->
             <androidx.appcompat.widget.LinearLayoutCompat
@@ -166,6 +178,7 @@
                 <!--ICON-->
                 <androidx.appcompat.widget.AppCompatImageView
                     android:layout_width="30dp"
+                    android:visibility="gone"
                     android:layout_height="30dp"
                     android:layout_gravity="center"
                     android:src="@drawable/ic_description_note_detail" />
@@ -174,30 +187,110 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:visibility="gone"
                     android:layout_marginStart="10dp"
                     android:fontFamily="@font/nunitosans"
                     android:text="@string/Description_Detail_TXT"
                     android:textSize="20sp" />
 
+                <!--DESCRIPTION DATA-->
+                <TextView
+                    android:id="@+id/Description_Detail"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/nunitosans"
+                    android:text="@string/Description_Detail"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
             </androidx.appcompat.widget.LinearLayoutCompat>
 
-            <!--DESCRIPTION DATA-->
-            <TextView
-                android:id="@+id/Description_Detail"
+
+
+
+            <!--DATE NOTE ICON TV-->
+            <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="22dp"
-                android:fontFamily="@font/nunitosans"
-                android:text="@string/Description_Detail"
-                android:textSize="17sp"
-                android:textStyle="bold" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:orientation="horizontal">
+                <!--ICON-->
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_date_note_detail" />
+                <!--TXT-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:visibility="gone"
+                    android:fontFamily="@font/nunitosans"
+                    android:text="@string/Date_Note_Detail_TXT"
+                    android:textSize="20sp" />
+                <!--DATE NOTE DATA-->
+                <TextView
+                    android:id="@+id/Date_Note_Detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/nunitosans"
+                    android:text="@string/Date_Note_Detail"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/State_Note_Detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="100dp"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/nunitosans"
+                    android:text="@string/State_Note_Detail"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <!--STATE NOTE ICON TV-->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+                <!--ICON-->
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:visibility="gone"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_status_detail" />
+                <!--TXT-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:visibility="gone"
+                    android:fontFamily="@font/nunitosans"
+                    android:text="@string/State_Note_Detail_TXT"
+                    android:textSize="20sp" />
+
+                <!--STATE NOTE DATA-->
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
 
             <!--DATE REGISTRATION ICON TV-->
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="100dp"
                 android:orientation="horizontal">
                 <!--ICON-->
                 <androidx.appcompat.widget.AppCompatImageView
@@ -228,75 +321,8 @@
                 android:textSize="17sp"
                 android:textStyle="bold" />
 
-            <!--DATE NOTE ICON TV-->
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal">
-                <!--ICON-->
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_date_note_detail" />
-                <!--TXT-->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="10dp"
-                    android:fontFamily="@font/nunitosans"
-                    android:text="@string/Date_Note_Detail_TXT"
-                    android:textSize="20sp" />
 
-            </androidx.appcompat.widget.LinearLayoutCompat>
 
-            <!--DATE NOTE DATA-->
-            <TextView
-                android:id="@+id/Date_Note_Detail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:fontFamily="@font/nunitosans"
-                android:text="@string/Date_Note_Detail"
-                android:textSize="17sp"
-                android:textStyle="bold" />
-
-            <!--STATE NOTE ICON TV-->
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal">
-                <!--ICON-->
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_status_detail" />
-                <!--TXT-->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="10dp"
-                    android:fontFamily="@font/nunitosans"
-                    android:text="@string/State_Note_Detail_TXT"
-                    android:textSize="20sp" />
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-            <!--STATE NOTE DATA-->
-            <TextView
-                android:id="@+id/State_Note_Detail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:fontFamily="@font/nunitosans"
-                android:text="@string/State_Note_Detail"
-                android:textSize="17sp"
-                android:textStyle="bold" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -304,14 +330,14 @@
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
-            android:background="@color/color_pri">
+            android:layout_marginTop="50dp"
+            android:background="@color/color_Button">
 
             <Button
                 android:id="@+id/Btn_Important"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:background="@android:color/transparent"
+                android:layout_height="70dp"
+                android:backgroundTint="@color/color_Button"
                 android:drawableTop="@drawable/ic_note_not_important"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:fontFamily="@font/nunitosans"

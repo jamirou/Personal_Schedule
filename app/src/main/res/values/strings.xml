@@ -45,7 +45,7 @@
     <string name="Date_ActualHour">Date and actual hour</string>
     <string name="Title"> Title </string>
     <string name="Description"> Description </string>
-    <string name="Btn_calendar">Calendar</string>
+    <string name="Btn_calendar">Date</string>
     <string name="Date"> 00/00/0000</string>
     <string name="State"> Not finished </string>
 
@@ -94,7 +94,7 @@
 
 
     <!--    DIALOG BOX-->
-    <string name="ChooseOptionTXT">Choose an option</string>
+    <string name="ChooseOptionTXT">Select</string>
     <string name="CD_Delete">Delete</string>
     <string name="CD_Update">Update</string>
 
@@ -172,7 +172,7 @@
     <string name="Title_Detail">Title</string>
     <string name="Description_Detail_TXT">Description: </string>
     <string name="Description_Detail">Description</string>
-    <string name="Date_Registration_Detail_TXT">Registration date:</string>
+    <string name="Date_Registration_Detail_TXT">Created:</string>
     <string name="Date_Registration_Detail">Date register</string>
     <string name="Date_Note_Detail_TXT">Note date: </string>
     <string name="Date_Note_Detail">Date note</string>
@@ -231,12 +231,12 @@
     <!--    UPDATE CONTACT-->
     <string name="Id_Contact_Update"> -- </string>
     <string name="Uid_Contact_Update"> -- </string>
-    <string name="Name_Contact_Update"> -- </string>
-    <string name="Lastname_Contact_Update"> -- </string>
-    <string name="Mail_Contact_Update"> -- </string>
-    <string name="Phone_Contact_Update"> -- </string>
-    <string name="Age_Contact_Update"> -- </string>
-    <string name="Home_Contact_Update"> -- </string>
+    <string name="Name_Contact_Update">Name</string>
+    <string name="Lastname_Contact_Update">last name</string>
+    <string name="Mail_Contact_Update">mail</string>
+    <string name="Phone_Contact_Update"> - </string>
+    <string name="Age_Contact_Update">Age</string>
+    <string name="Home_Contact_Update">Home direction</string>
     <string name="Update_Contact_Update">Update</string>
 
     <!--    APP INFORMATION-->
