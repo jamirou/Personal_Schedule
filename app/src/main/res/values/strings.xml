@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Agenda Online</string>
+    <string name="app_name">Personal Schedule</string>
 
     <!--    MAIN ACTIVITY-->
     <string name="Btn_Login">Login</string>
@@ -126,6 +126,11 @@
     <string name="Finished_notes">Finished</string>
     <string name="Notes_NotFinished">Not finished</string>
 
+    <!--    DIALOG BOX AUTHENTICATION-->
+    <string name="ImportantTXT_Auth">Please read</string>
+    <string name="MessageTXT_Auth">To delete your account you must first log out, and you will have 5 minutes to log in again and delete the account permanently.</string>
+    <string name="Btn_Okay_Auth">Okay</string>
+    <string name="Btn_Logout_Auth">Logout</string>
 
     <!--    DIALOG VERIFIED ACCOUNT-->
     <string name="Verified_Account_TXT">Account verified</string>

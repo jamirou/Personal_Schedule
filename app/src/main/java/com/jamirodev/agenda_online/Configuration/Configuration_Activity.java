@@ -5,10 +5,12 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +25,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.jamirodev.agenda_online.MainActivity;
 import com.jamirodev.agenda_online.MainMenuActivity;
 import com.jamirodev.agenda_online.R;
 
@@ -33,6 +36,7 @@ public class Configuration_Activity extends AppCompatActivity {
     FirebaseUser user;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
+    Dialog dialog_authentication;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +57,24 @@ public class Configuration_Activity extends AppCompatActivity {
                 DeleteUserAuth();
             }
         });
+    }
+
+    private void InitVariables() {
+        Uid_delete = findViewById(R.id.Uid_delete);
+        DeleteAccount = findViewById(R.id.DeleteAccount);
+
+        firebaseAuth = FirebaseAuth.getInstance();
+        user = firebaseAuth.getCurrentUser();
+
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference("Users");
+
+        dialog_authentication = new Dialog(Configuration_Activity.this);
+    }
+
+    private void GetUid(){
+        String uid = getIntent().getStringExtra("Uid");
+        Uid_delete.setText(uid);
     }
 
     private void DeleteUserAuth() {
@@ -80,7 +102,8 @@ public class Configuration_Activity extends AppCompatActivity {
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(Configuration_Activity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(Configuration_Activity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                        Authentication();
                     }
                 });
             }
@@ -113,20 +136,39 @@ public class Configuration_Activity extends AppCompatActivity {
         });
     }
 
-    private void InitVariables() {
-        Uid_delete = findViewById(R.id.Uid_delete);
-        DeleteAccount = findViewById(R.id.DeleteAccount);
+    private void Authentication() {
+        Button Btn_Okay_Auth, Btn_Logout_Auth;
 
-        firebaseAuth = FirebaseAuth.getInstance();
-        user = firebaseAuth.getCurrentUser();
+        dialog_authentication.setContentView(R.layout.dialog_box_authentication);
 
-        firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference = firebaseDatabase.getReference("Users");
+        Btn_Okay_Auth = dialog_authentication.findViewById(R.id.Btn_Okay_Auth);
+        Btn_Logout_Auth = dialog_authentication.findViewById(R.id.Btn_Logout_Auth);
+
+        Btn_Okay_Auth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog_authentication.dismiss();
+            }
+        });
+
+        Btn_Logout_Auth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LogOut();
+                dialog_authentication.dismiss();
+            }
+        });
+
+        dialog_authentication.show();
+        dialog_authentication.setCanceledOnTouchOutside(false);
+
     }
 
-    private void GetUid(){
-        String uid = getIntent().getStringExtra("Uid");
-        Uid_delete.setText(uid);
+    private void LogOut() {
+        firebaseAuth.signOut();
+        startActivity(new Intent(Configuration_Activity.this, MainActivity.class));
+        finish();
+        Toast.makeText(this, "Session closed", Toast.LENGTH_SHORT).show();
     }
 
     @Override

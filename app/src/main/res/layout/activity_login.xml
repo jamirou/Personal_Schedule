@@ -27,7 +27,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             app:lottie_autoPlay="true"
-            app:lottie_fileName="login.json"
+            app:lottie_fileName="authentication.json"
             app:lottie_imageAssetsFolder="assets"
             app:lottie_loop="true" />
 

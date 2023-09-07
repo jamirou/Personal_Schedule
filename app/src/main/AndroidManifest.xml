@@ -92,7 +92,8 @@
             android:theme="@style/AppTheme" />
         <activity
             android:name=".Charge_Activity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/AppTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
