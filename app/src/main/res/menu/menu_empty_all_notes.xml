@@ -10,4 +10,12 @@
 
     </item>
 
+    <item
+        android:id="@+id/Filter_Notes"
+        android:icon="@drawable/ic_filter"
+        app:showAsAction="ifRoom"
+        android:title="@string/Filter_Notes">
+
+    </item>
+
 </menu>

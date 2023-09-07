@@ -53,6 +53,7 @@
     <string name="Add_NoteDB">Add</string>
     <string name="Update_Note_BD">Update</string>
     <string name="Empty_all_notes">Empty all notes</string>
+    <string name="Filter_Notes">Filter notes</string>
     <string name="Profile_User">Profile</string>
     <string name="Update_Password">Update password</string>
     <string name="Add_contact">Add contact</string>
@@ -117,6 +118,14 @@
     <string name="ChooseOptionContactTXT">Contact settings</string>
     <string name="Btn_delete_Contact">Delete</string>
     <string name="Btn_Update_Contact">Update</string>
+
+    <!--    DIALOG BOX FILTER NOTES-->
+    <string name="Filter_NotesTXT">Filter notes: </string>
+    <string name="All_Notes">All</string>
+    <string name="Finished_notes">Finished</string>
+    <string name="Notes_NotFinished">Not finished</string>
+    
+
 
     <!--    DIALOG VERIFIED ACCOUNT-->
     <string name="Verified_Account_TXT">Account verified</string>
