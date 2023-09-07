@@ -23,14 +23,16 @@
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
-                android:layout_marginTop="15dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
                 android:orientation="horizontal"
                 android:weightSum="4">
 
                 <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
+                    android:id="@+id/Image_user"
+                    android:layout_width="90dp"
+                    android:layout_height="100dp"
+                    android:scaleType="centerCrop"
                     android:layout_gravity="center"
                     android:layout_marginStart="2dp"
                     android:layout_weight="1"
@@ -44,13 +46,13 @@
                     android:orientation="vertical"
                     android:padding="10dp">
 
-<!--                    <TextView-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:fontFamily="@font/nunitosans"-->
-<!--                        android:text="@string/WelcomeMainMenu"-->
-<!--                        android:textColor="@color/black"-->
-<!--                        android:textSize="20sp" />-->
+                    <!--                    <TextView-->
+                    <!--                        android:layout_width="wrap_content"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:fontFamily="@font/nunitosans"-->
+                    <!--                        android:text="@string/WelcomeMainMenu"-->
+                    <!--                        android:textColor="@color/black"-->
+                    <!--                        android:textSize="20sp" />-->
 
                     <ProgressBar
                         android:id="@+id/ProgressBarData"
@@ -150,9 +152,9 @@
                             android:layout_marginStart="3dp"
                             android:layout_marginTop="6dp"
                             android:fontFamily="@font/nunitosans"
+                            android:padding="0dp"
                             android:text="@string/MainAccountStatus"
                             android:textColor="@color/black"
-                            android:padding="0dp"
                             android:textSize="15sp" />
 
                     </androidx.appcompat.widget.LinearLayoutCompat>
@@ -198,8 +200,8 @@
                         android:id="@+id/AddNotes"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:backgroundTint="@color/color_profile"
                         android:layout_marginTop="10dp"
+                        android:backgroundTint="@color/color_profile"
                         android:enabled="false"
                         android:fontFamily="@font/nunitosans"
                         android:text="@string/AddNotes" />
@@ -223,9 +225,9 @@
                     <Button
                         android:id="@+id/ListNotes"
                         android:layout_width="match_parent"
-                        android:backgroundTint="@color/color_profile"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
+                        android:backgroundTint="@color/color_profile"
                         android:enabled="false"
                         android:fontFamily="@font/nunitosans"
                         android:text="@string/ListNotes" />
@@ -260,9 +262,9 @@
                     <Button
                         android:id="@+id/Important"
                         android:layout_width="match_parent"
-                        android:backgroundTint="@color/color_profile"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
+                        android:backgroundTint="@color/color_profile"
                         android:enabled="false"
                         android:fontFamily="@font/nunitosans"
                         android:text="@string/Important" />
@@ -286,9 +288,9 @@
                     <Button
                         android:id="@+id/Contacts"
                         android:layout_width="match_parent"
-                        android:backgroundTint="@color/color_profile"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
+                        android:backgroundTint="@color/color_profile"
                         android:enabled="false"
                         android:fontFamily="@font/nunitosans"
                         android:text="@string/Contacts" />
@@ -324,8 +326,8 @@
                         android:id="@+id/About"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:backgroundTint="@color/color_profile"
                         android:layout_marginTop="10dp"
+                        android:backgroundTint="@color/color_profile"
                         android:enabled="false"
                         android:fontFamily="@font/nunitosans"
                         android:text="@string/About" />
@@ -350,8 +352,8 @@
                         android:id="@+id/SignOut"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:backgroundTint="@color/color_profile"
                         android:layout_marginTop="10dp"
+                        android:backgroundTint="@color/color_profile"
                         android:enabled="false"
                         android:fontFamily="@font/nunitosans"
                         android:text="@string/SignOut" />

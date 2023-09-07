@@ -235,7 +235,7 @@
 
     <!--    APP INFORMATION-->
     <string name="Developer">Developed by Jamiro</string>
-    <string name="MailSupport">DevJamiro@gmail.com </string>
+    <string name="MailSupport">devjamiro@gmail.com </string>
     <string name="Version">Version: 0.1</string>
     <string name="CloseInfo">Close</string>
 

@@ -17,10 +17,12 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -43,7 +45,7 @@ public class MainMenuActivity extends AppCompatActivity {
     Button AddNotes, ListNotes, Important, Contacts, About, SignOut;
     FirebaseAuth firebaseAuth;
     FirebaseUser user;
-
+    ImageView Image_user;
     TextView UidMain, NamesMain, MailMain;
     Button MainAccountStatus;
     ProgressBar ProgressBarData;
@@ -60,6 +62,7 @@ public class MainMenuActivity extends AppCompatActivity {
         assert actionBar != null;
         actionBar.setTitle("");
 
+        Image_user = findViewById(R.id.Image_user);
         UidMain = findViewById(R.id.UidMain);
         NamesMain = findViewById(R.id.NamesMain);
         MailMain = findViewById(R.id.MailMain);
@@ -208,7 +211,7 @@ public class MainMenuActivity extends AppCompatActivity {
             MainAccountStatus.setBackgroundColor(Color.rgb(255, 255, 255));
         }else {
             MainAccountStatus.setText(Not_Verified);
-            MainAccountStatus.setBackgroundColor(Color.rgb(244, 206, 115));
+            MainAccountStatus.setBackgroundColor(Color.rgb(252, 200, 209));
 
         }
     }
@@ -280,6 +283,7 @@ public class MainMenuActivity extends AppCompatActivity {
                     String uid = "" + snapshot.child("uid").getValue();
                     String names = "" + snapshot.child("Names").getValue();
                     String mail = "" + snapshot.child("Gmail").getValue();
+                    String image = "" + snapshot.child("Profile_img").getValue();
 
                     //SET DATA ON TEXTVIEW
                     UidMain.setText(uid);
@@ -293,6 +297,8 @@ public class MainMenuActivity extends AppCompatActivity {
                     Contacts.setEnabled(true);
                     About.setEnabled(true);
                     SignOut.setEnabled(true);
+
+                    GetImage(image);
                 }
             }
             @Override
@@ -300,6 +306,15 @@ public class MainMenuActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    private void GetImage(String image) {
+        try {
+            Glide.with(getApplicationContext()).load(image).placeholder(R.drawable.user).into(Image_user);
+        }catch (Exception e){
+            Glide.with(getApplicationContext()).load(R.drawable.user).into(Image_user);
+
+        }
     }
 
     @Override
