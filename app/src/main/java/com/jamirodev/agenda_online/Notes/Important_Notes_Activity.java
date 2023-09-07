@@ -143,7 +143,8 @@ public class Important_Notes_Activity extends AppCompatActivity {
         };
 
         linearLayoutManager = new LinearLayoutManager(Important_Notes_Activity.this, LinearLayoutManager.VERTICAL, false);
-
+        linearLayoutManager.setReverseLayout(true);
+        linearLayoutManager.setStackFromEnd(true);
 
         RVImportantNotes.setLayoutManager(linearLayoutManager);
         RVImportantNotes.setAdapter(firebaseRecyclerAdapter);

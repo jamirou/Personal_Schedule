@@ -20,6 +20,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -41,6 +43,9 @@ public class Update_Note_Activity extends AppCompatActivity implements AdapterVi
     ImageView Task_Ended, Task_Incomplete;
     Spinner Spinner_state;
     int day, month, year;
+
+    FirebaseAuth firebaseAuth;
+    FirebaseUser user;
 
 
     @Override
@@ -84,6 +89,9 @@ public class Update_Note_Activity extends AppCompatActivity implements AdapterVi
 
         Spinner_state = findViewById(R.id.Spinner_State);
         New_State = findViewById(R.id.New_State);
+
+        firebaseAuth = FirebaseAuth.getInstance();
+        user = firebaseAuth.getCurrentUser();
     }
 
     private void DataRecover() {
@@ -174,9 +182,9 @@ public class Update_Note_Activity extends AppCompatActivity implements AdapterVi
         String stateUpdate = New_State.getText().toString();
 
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-        DatabaseReference databaseReference = firebaseDatabase.getReference("Published notes");
+        DatabaseReference databaseReference = firebaseDatabase.getReference("Users");
 
-        Query query = databaseReference.orderByChild("id_note").equalTo(id_note_R);
+        Query query = databaseReference.child(user.getUid()).child("Published notes").orderByChild("id_note").equalTo(id_note_R);
         query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

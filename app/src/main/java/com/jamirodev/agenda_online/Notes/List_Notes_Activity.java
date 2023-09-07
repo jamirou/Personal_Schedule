@@ -40,7 +40,7 @@ public class List_Notes_Activity extends AppCompatActivity {
 
     RecyclerView rvNotes;
     FirebaseDatabase firebaseDatabase;
-    DatabaseReference DATA_BASE;
+    DatabaseReference DB_Users;
 
     LinearLayoutManager linearLayoutManager;
 
@@ -70,14 +70,14 @@ public class List_Notes_Activity extends AppCompatActivity {
         user = auth.getCurrentUser();
 
         firebaseDatabase = FirebaseDatabase.getInstance();
-        DATA_BASE = firebaseDatabase.getReference("Published notes");
+        DB_Users = firebaseDatabase.getReference("Users");
         dialog = new Dialog(List_Notes_Activity.this);
         ListNotesUsers();
     }
 
     private void ListNotesUsers() {
         //CONSULT
-        Query query = DATA_BASE.orderByChild("uid_user").equalTo(user.getUid());
+        Query query = DB_Users.child(user.getUid()).child("Published notes").orderByChild("date_note");
         options = new FirebaseRecyclerOptions.Builder<Note>().setQuery(query, Note.class).build();
         firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Note, ViewHolder_Note>(options) {
             @Override
@@ -195,7 +195,7 @@ public class List_Notes_Activity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
 //                DELETE NOTE FROM DB
-                Query query = DATA_BASE.orderByChild("id_note").equalTo(idNote);
+                Query query = DB_Users.child(user.getUid()).child("Published notes").orderByChild("id_note").equalTo(idNote);
 //                HERE COULD BE AN ERROR IN ID NOTE
                 query.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
@@ -234,7 +234,7 @@ public class List_Notes_Activity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
 //                DELETE ALL NOTES
-                Query query = DATA_BASE.orderByChild("uid_user").equalTo(user.getUid());
+                Query query = DB_Users.child(user.getUid()).child("Published notes");
                 query.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
