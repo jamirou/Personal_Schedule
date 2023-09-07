@@ -11,6 +11,7 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -238,10 +239,29 @@ public class MainMenuActivity extends AppCompatActivity {
     }
 
     private void Information() {
+
+        ImageView facebook, instagram;
         Button CloseInfo;
 
         dialog_Info.setContentView(R.layout.dialog_box_information);
         CloseInfo = dialog_Info.findViewById(R.id.CloseInfo);
+        facebook = dialog_Info.findViewById(R.id.facebook);
+        instagram = dialog_Info.findViewById(R.id.instagram);
+
+        facebook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent Pfacebook = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/profile.php?id=100089372131465"));
+                startActivity(Pfacebook);
+            }
+        });
+        instagram.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent Pinstagram = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/jam3312_/"));
+                startActivity(Pinstagram);
+            }
+        });
 
         CloseInfo.setOnClickListener(new View.OnClickListener() {
             @Override
