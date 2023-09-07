@@ -35,6 +35,9 @@
             android:textSize="20sp"
             app:drawableStartCompat="@drawable/ic_delete_account" />
 
+<!--        android:foreground="?android:attr/selectableItemBackground"-->
+
+
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
