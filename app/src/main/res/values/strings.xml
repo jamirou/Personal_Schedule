@@ -7,7 +7,7 @@
 
     <!--    ACTIVITY REGISTER-->
     <string name="CreateAccountTxt">Create account</string>
-    <string name="NameEt">Names</string>
+    <string name="NameEt">Name</string>
     <string name="GmailEt">Gmail</string>
     <string name="PasswordEt">Password</string>
     <string name="ConfirmPasswordEt">Confirm password</string>

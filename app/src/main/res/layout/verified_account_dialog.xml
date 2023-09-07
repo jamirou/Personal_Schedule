@@ -8,20 +8,10 @@
     android:background="@color/lead"
     android:padding="10dp">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/nunitosans"
-        android:gravity="center"
-        android:text="@string/Verified_Account_TXT"
-        android:textSize="20sp"
-        android:textStyle="bold" />
-
     <com.airbnb.lottie.LottieAnimationView
         android:layout_width="match_parent"
         android:layout_height="340dp"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"
         app:lottie_autoPlay="true"
         app:lottie_fileName="verifiedAccount.json"
         app:lottie_imageAssetsFolder="assets"
@@ -31,7 +21,7 @@
         android:id="@+id/Understood_Verified"
         android:layout_width="190dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/color_Verified_Button"
+        android:backgroundTint="@color/color_pri"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/nunitosans"

@@ -15,8 +15,8 @@
 
         <!--        ANIMATION-->
         <com.airbnb.lottie.LottieAnimationView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="400dp"
+            android:layout_height="400dp"
             app:lottie_autoPlay="true"
             app:lottie_fileName="calendary.json"
             app:lottie_imageAssetsFolder="assets"
