@@ -39,6 +39,9 @@ import com.jamirodev.agenda_online.Notes.Important_Notes_Activity;
 import com.jamirodev.agenda_online.Notes.List_Notes_Activity;
 import com.jamirodev.agenda_online.Profile.Profile_User_Activity;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /** @noinspection ALL*/
 public class MainMenuActivity extends AppCompatActivity {
 
@@ -52,7 +55,7 @@ public class MainMenuActivity extends AppCompatActivity {
     ProgressDialog progressDialog;
     LinearLayoutCompat Linear_Names, Linear_Mail, Linear_Verification;
     DatabaseReference Users;
-    Dialog dialog_verified_account, dialog_Info;
+    Dialog dialog_verified_account, dialog_Info, dialog_Date;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,6 +73,7 @@ public class MainMenuActivity extends AppCompatActivity {
         ProgressBarData = findViewById(R.id.ProgressBarData);
         dialog_verified_account = new Dialog(this);
         dialog_Info = new Dialog(this);
+        dialog_Date = new Dialog(this);
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Please wait...");
@@ -249,6 +253,31 @@ public class MainMenuActivity extends AppCompatActivity {
         dialog_Info.setCanceledOnTouchOutside(false);
     }
 
+    private void DisplayDate() {
+        TextView Today;
+        Button Btn_close;
+
+        dialog_Date.setContentView(R.layout.dialog_box_date);
+
+        Today = dialog_Date.findViewById(R.id.Today);
+        Btn_close = dialog_Date.findViewById(R.id.Btn_close);
+
+        Date date = new Date();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("d MMMM yyyy");
+        String DATE = simpleDateFormat.format(date);
+        Today.setText(DATE);
+
+        Btn_close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog_Date.dismiss();
+            }
+        });
+
+        dialog_Date.show();
+        dialog_Date.setCanceledOnTouchOutside(false);
+    }
+
     @Override
     protected void onStart() {
         CheckLogin();
@@ -328,6 +357,9 @@ public class MainMenuActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.Profile_User){
             startActivity(new Intent(MainMenuActivity.this,Profile_User_Activity.class));
+        }
+        if (item.getItemId() == R.id.Calendar){
+            DisplayDate();
         }
         if (item.getItemId() == R.id.Configuration){
             String uid_user = UidMain.getText().toString();

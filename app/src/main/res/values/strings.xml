@@ -58,6 +58,7 @@
     <string name="Configuration">Configuration</string>
     <string name="Update_Password">Update password</string>
     <string name="Add_contact">Add contact</string>
+    <string name="Calendar">Calendar</string>
     <string name="EmptyContacts">Delete all contacts</string>
     <string name="Search_Contact">Search contact</string>
 
@@ -132,6 +133,11 @@
     <string name="Btn_Okay_Auth">Okay</string>
     <string name="Btn_Logout_Auth">Logout</string>
 
+    <!--    DIALOG BOX SHOW DATE-->
+    <string name="TXT_Today">Today</string>
+    <string name="Today"> -- </string>
+    <string name="Btn_close">Close</string>
+    
     <!--    DIALOG VERIFIED ACCOUNT-->
     <string name="Verified_Account_TXT">Account verified</string>
     <string name="Understood_Verified">Understood</string>
