@@ -64,11 +64,11 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:drawableStart="@drawable/ic_uid_profile_user"
                 android:drawablePadding="5dp"
                 android:fontFamily="@font/nunitosans"
                 android:text="@string/Uid_Profile"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                app:drawableStartCompat="@drawable/ic_uid_profile_user" />
             <!--NAMES-->
             <EditText
                 android:id="@+id/Names_Profile"

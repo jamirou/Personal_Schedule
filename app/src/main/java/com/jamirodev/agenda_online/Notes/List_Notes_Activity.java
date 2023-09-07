@@ -1,4 +1,4 @@
-package com.jamirodev.agenda_online.ListNote;
+package com.jamirodev.agenda_online.Notes;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -30,11 +30,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-import com.jamirodev.agenda_online.Details.Detail_Note_Activity;
 import com.jamirodev.agenda_online.Objects.Note;
 import com.jamirodev.agenda_online.R;
-import com.jamirodev.agenda_online.UpdateNote.Update_Note_Activity;
 import com.jamirodev.agenda_online.ViewHolder.ViewHolder_Note;
+//import com.jamirodev.agenda_online.Notes.Detail_Note_Activity;
+//import com.jamirodev.agenda_online.Notes.Update_Note_Activity;
 
 public class List_Notes_Activity extends AppCompatActivity {
 

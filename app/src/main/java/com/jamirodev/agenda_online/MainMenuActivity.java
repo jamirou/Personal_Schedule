@@ -30,10 +30,10 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.jamirodev.agenda_online.AddNote.Add_Note_Activity;
+import com.jamirodev.agenda_online.Notes.Add_Note_Activity;
 import com.jamirodev.agenda_online.Contacts.List_Contacts_Activity;
-import com.jamirodev.agenda_online.ImportantNotes.Important_Notes_Activity;
-import com.jamirodev.agenda_online.ListNote.List_Notes_Activity;
+import com.jamirodev.agenda_online.Notes.Important_Notes_Activity;
+import com.jamirodev.agenda_online.Notes.List_Notes_Activity;
 import com.jamirodev.agenda_online.Profile.Profile_User_Activity;
 
 /** @noinspection ALL*/

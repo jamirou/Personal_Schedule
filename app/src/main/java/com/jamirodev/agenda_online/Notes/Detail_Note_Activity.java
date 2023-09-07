@@ -1,4 +1,4 @@
-package com.jamirodev.agenda_online.Details;
+package com.jamirodev.agenda_online.Notes;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;

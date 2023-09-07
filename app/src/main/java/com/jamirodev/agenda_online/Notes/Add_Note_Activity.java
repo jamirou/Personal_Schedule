@@ -1,4 +1,4 @@
-package com.jamirodev.agenda_online.AddNote;
+package com.jamirodev.agenda_online.Notes;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -16,6 +16,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.jamirodev.agenda_online.Objects.Note;
@@ -30,6 +32,9 @@ public class Add_Note_Activity extends AppCompatActivity {
     EditText Title, Description;
     Button Btn_calendar;
     int day, month, year;
+
+    FirebaseAuth firebaseAuth;
+    FirebaseUser user;
     DatabaseReference DB_Firebase;
 
     @Override
@@ -98,7 +103,10 @@ public class Add_Note_Activity extends AppCompatActivity {
         Description = findViewById(R.id.Description);
         Btn_calendar = findViewById(R.id.Btn_calendar);
 
-        DB_Firebase = FirebaseDatabase.getInstance().getReference();
+        DB_Firebase = FirebaseDatabase.getInstance().getReference("Users");
+
+        firebaseAuth = FirebaseAuth.getInstance();
+        user =firebaseAuth.getCurrentUser();
     }
 
     private void ObtainData() {
@@ -144,7 +152,7 @@ public class Add_Note_Activity extends AppCompatActivity {
             String Name_DB = "Published notes";
 
             assert id_Note != null;
-            DB_Firebase.child(Name_DB).child(id_Note).setValue(note);
+            DB_Firebase.child(user.getUid()).child(Name_DB).child(id_Note).setValue(note);
             Toast.makeText(this, "Successfully added note", Toast.LENGTH_SHORT).show();
             onBackPressed();
         }

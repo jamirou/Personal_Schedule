@@ -52,11 +52,11 @@
             android:exported="false"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".Details.Detail_Note_Activity"
+            android:name=".Notes.Detail_Note_Activity"
             android:exported="false"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".UpdateNote.Update_Note_Activity"
+            android:name=".Notes.Update_Note_Activity"
             android:exported="false"
             android:theme="@style/AppTheme" />
         <activity
@@ -64,15 +64,15 @@
             android:exported="false"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".ImportantNotes.Important_Notes_Activity"
+            android:name=".Notes.Important_Notes_Activity"
             android:exported="false"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".ListNote.List_Notes_Activity"
+            android:name=".Notes.List_Notes_Activity"
             android:exported="false"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".AddNote.Add_Note_Activity"
+            android:name=".Notes.Add_Note_Activity"
             android:exported="false"
             android:theme="@style/AppTheme" />
         <activity

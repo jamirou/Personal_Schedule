@@ -1,4 +1,4 @@
-package com.jamirodev.agenda_online.UpdateNote;
+package com.jamirodev.agenda_online.Notes;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -26,7 +26,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-import com.jamirodev.agenda_online.AddNote.Add_Note_Activity;
 import com.jamirodev.agenda_online.R;
 
 import java.util.Calendar;

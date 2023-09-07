@@ -1,4 +1,4 @@
-package com.jamirodev.agenda_online.ImportantNotes;
+package com.jamirodev.agenda_online.Notes;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Dialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,14 +22,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.jamirodev.agenda_online.Details.Detail_Note_Activity;
-import com.jamirodev.agenda_online.ListNote.List_Notes_Activity;
 import com.jamirodev.agenda_online.Objects.Note;
 import com.jamirodev.agenda_online.R;
-import com.jamirodev.agenda_online.UpdateNote.Update_Note_Activity;
 import com.jamirodev.agenda_online.ViewHolder.ViewHolder_Important_Note;
-import com.jamirodev.agenda_online.ViewHolder.ViewHolder_Note;
 
 import java.util.Objects;
 
