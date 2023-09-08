@@ -1,6 +1,6 @@
 # Personal Schedule 
 
-Este proyecto de Android es una aplicación de agenda avanzada que incorpora una serie de características y conceptos de programación relevantes. A continuación, se detallan las características clave que destacan en esta aplicación:
+Este proyecto de Android es una agenda completa que incorpora una serie de características y conceptos de programación avanzados. A continuación, se detallan las características y conceptos clave que se han implementado en la aplicación:
 
 ## Características Principales
 
