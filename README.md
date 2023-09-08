@@ -1,6 +1,6 @@
 # Personal Schedule 
 
-Este proyecto de Android es una agenda completa que incorpora una serie de características y conceptos de programación avanzados. A continuación, se detallan las características y conceptos clave que se han implementado en la aplicación:
+Este proyecto de Android es una aplicación de agenda avanzada que incorpora una serie de características y conceptos de programación relevantes. A continuación, se detallan las características clave que destacan en esta aplicación:
 
 ## Características Principales
 
@@ -36,3 +36,13 @@ Este proyecto de Android es una agenda completa que incorpora una serie de carac
 - Control avanzado de estados de red para mantener la conectividad.
 - Implementación de cuadros de diálogos personalizados para mejorar la experiencia del usuario.
 
+## Capturas de la app:
+<img src="https://github.com/jamirou/Personal_Schedule/assets/48457084/f313942e-bb6d-44b9-9141-1a7771e5532e" width="300" height="650"> ![fig1](https://github.com/jamirou/Personal_Schedule/assets/48457084/1315b4df-9ad5-44db-bc3d-6ef4f8172fc8) 
+
+
+<img src="https://github.com/jamirou/Personal_Schedule/assets/48457084/dc89bad5-4e03-4fdb-a556-2469a0b17cb0" width="300" height="650"> ![gif2](https://github.com/jamirou/Personal_Schedule/assets/48457084/1e8f32f5-657b-4821-95da-1d13cb7e1e52)
+
+ 
+<img src="https://github.com/jamirou/Personal_Schedule/assets/48457084/25a73155-a51c-4774-b043-b9598bc027fc" width="300" height="650"> ![gif3](https://github.com/jamirou/Personal_Schedule/assets/48457084/426d32b9-df72-4b40-8e1b-964b40beace8)
+
+<img src="https://github.com/jamirou/Personal_Schedule/assets/48457084/636963bd-5136-42c3-ba90-554053aa6be9" width="300" height="650"> ![gif4](https://github.com/jamirou/Personal_Schedule/assets/48457084/6b4e13dc-aaf2-4236-8171-a5bbd2c0a2b9)
