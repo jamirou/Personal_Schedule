@@ -265,7 +265,7 @@ public class Profile_User_Activity extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
-                        Toast.makeText(Profile_User_Activity.this, "Updated successfully", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Profile_User_Activity.this, "Subido exitosamente", Toast.LENGTH_SHORT).show();
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override

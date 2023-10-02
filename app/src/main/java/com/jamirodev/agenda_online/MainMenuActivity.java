@@ -77,7 +77,7 @@ public class MainMenuActivity extends AppCompatActivity {
         dialog_Date = new Dialog(this);
 
         progressDialog = new ProgressDialog(this);
-        progressDialog.setTitle("Please wait...");
+        progressDialog.setTitle("Por favor espere...");
         progressDialog.setCanceledOnTouchOutside(false);
 
         Linear_Names = findViewById(R.id.Linear_Names);
@@ -130,14 +130,14 @@ public class MainMenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainMenuActivity.this, List_Notes_Activity.class));
-                Toast.makeText(MainMenuActivity.this, "List Notes", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainMenuActivity.this, "Notas", Toast.LENGTH_SHORT).show();
             }
         });
         Important.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainMenuActivity.this, Important_Notes_Activity.class));
-                Toast.makeText(MainMenuActivity.this, "Important notes", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainMenuActivity.this, "Notas importantes", Toast.LENGTH_SHORT).show();
             }
         });
         Contacts.setOnClickListener(new View.OnClickListener() {
@@ -169,19 +169,19 @@ public class MainMenuActivity extends AppCompatActivity {
 
     private void VerifyEmailAccount() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Verify account")
-                .setMessage("Press Confirm to send the verification to the email: "
+        builder.setTitle("Verificar cuenta")
+                .setMessage("Presiona confirmar para enviar un correo de confirmacion a tu gmal"
                 +user.getEmail())
-                .setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+                .setPositiveButton("Confirmar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         SendMailForVerification();
                     }
                 })
-                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        Toast.makeText(MainMenuActivity.this, "Operation canceled", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainMenuActivity.this, "Operacion cancelada", Toast.LENGTH_SHORT).show();
                     }
                 }).show();
     }
@@ -209,8 +209,8 @@ public class MainMenuActivity extends AppCompatActivity {
     }
 
     private void CheckAccountVerification() {
-        String Verified = "Verified";
-        String Not_Verified = "Not verified";
+        String Verified = "Verificado";
+        String Not_Verified = "No verificado";
         if (user.isEmailVerified()){
             MainAccountStatus.setText(Verified);
             MainAccountStatus.setBackgroundColor(Color.rgb(255, 255, 255));
@@ -394,6 +394,6 @@ public class MainMenuActivity extends AppCompatActivity {
     private void ExitApp() {
         firebaseAuth.signOut();
         startActivity(new Intent(MainMenuActivity.this, MainActivity.class));
-        Toast.makeText(this, "Logout successful", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Sesion cerrada", Toast.LENGTH_SHORT).show();
     }
 }

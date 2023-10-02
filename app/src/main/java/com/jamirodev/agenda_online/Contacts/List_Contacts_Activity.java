@@ -54,7 +54,7 @@ public class List_Contacts_Activity extends AppCompatActivity {
 
         ActionBar actionBar = getSupportActionBar();
         assert actionBar != null;
-        actionBar.setTitle("Contacts");
+        actionBar.setTitle("Contactos");
         actionBar.setDisplayShowHomeEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);
 

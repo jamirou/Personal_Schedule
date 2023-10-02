@@ -79,8 +79,8 @@ public class Configuration_Activity extends AppCompatActivity {
 
     private void DeleteUserAuth() {
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(Configuration_Activity.this);
-        alertDialog.setTitle("are you sure?");
-        alertDialog.setMessage("Your account will be permanently deleted");
+        alertDialog.setTitle("Estas segura?");
+        alertDialog.setMessage("Tu cuenta sera eliminada para siempre");
         alertDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
@@ -94,7 +94,7 @@ public class Configuration_Activity extends AppCompatActivity {
                                     .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                             startActivity(intent);
                             finish();
-                            Toast.makeText(Configuration_Activity.this, "Account successfully deleted", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Configuration_Activity.this, "Cuenta eliminada exitosamente", Toast.LENGTH_SHORT).show();
                         }else {
                             Toast.makeText(Configuration_Activity.this, "Error", Toast.LENGTH_SHORT).show();
                         }
@@ -111,7 +111,7 @@ public class Configuration_Activity extends AppCompatActivity {
         alertDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                Toast.makeText(Configuration_Activity.this, "Canceled by user", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Configuration_Activity.this, "Cancelado por el usuario", Toast.LENGTH_SHORT).show();
             }
         });
         alertDialog.create().show();

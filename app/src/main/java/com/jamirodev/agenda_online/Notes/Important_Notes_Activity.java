@@ -49,7 +49,7 @@ public class Important_Notes_Activity extends AppCompatActivity {
 
         ActionBar actionBar = getSupportActionBar();
         assert actionBar != null;
-        actionBar.setTitle("Important notes");
+        actionBar.setTitle("Notas importantes");
         actionBar.setDisplayShowHomeEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);
 
@@ -128,7 +128,7 @@ public class Important_Notes_Activity extends AppCompatActivity {
                         DeleteNoteCancel.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                Toast.makeText(Important_Notes_Activity.this, "Operation cancelled by user", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Important_Notes_Activity.this, "Operacion cancelada por el usuario", Toast.LENGTH_SHORT).show();
                                 dialog.dismiss();
                             }
                         });

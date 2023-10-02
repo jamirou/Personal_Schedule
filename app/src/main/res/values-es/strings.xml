@@ -1,0 +1,253 @@
+<resources>
+    <string name="app_name">Agenda personal</string>
+
+    <!--    MAIN ACTIVITY-->
+    <string name="Btn_Login">Iniciar sesion</string>
+    <string name="Btn_Register">Registrarse</string>
+
+    <!--    ACTIVITY REGISTER-->
+    <string name="CreateAccountTxt">Crea tu cuenta</string>
+    <string name="NameEt">Nombre</string>
+    <string name="GmailEt">Gmail</string>
+    <string name="PasswordEt">Contraseña</string>
+    <string name="ConfirmPasswordEt">Confirmar contraseña</string>
+    <string name="RegisterUser">Registrar</string>
+    <string name="HaveAccount">Ya tengo una cuenta</string>
+    <string name="creating_your_account">Creando cuenta…</string>
+
+
+    <!--    LOGIN ACTIVITY-->
+    <string name="LogInTXT">Iniciar sesion</string>
+    <string name="MailLogin">Mail</string>
+    <string name="PassLogin">Contraseña</string>
+    <string name="Btn_login">Iniciar</string>
+    <string name="NewUserTXT">No tienes una cuenta? Registrate!</string>
+    <string name="logging_in">Iniciando…</string>
+
+    <!--MAIN MENU-->
+    <string name="WelcomeMainMenu">Bienvenida</string>
+    <string name="UidMain"> -- </string>
+    <string name="NamesMain"> -- </string>
+    <string name="MailMain"> -- </string>
+    <string name="MainAccountStatus">No verificada</string>
+
+    <string name="AddNotes">Nueva nota</string>
+    <string name="ListNotes">Notas</string>
+    <string name="Important">Importante</string>
+    <string name="Contacts">Contactos</string>
+    <string name="About">Programador</string>
+    <string name="SignOut">Cerrar sesion</string>
+
+    <!--    ADD NOTE-->
+    <string name="Uid_User">Uid de usuario</string>
+    <string name="Mail_User">Email del usuario</string>
+    <string name="Date_Hour_Actual_TXT">Fecha de registro</string>
+    <string name="Date_ActualHour">Fecha y hora actual</string>
+    <string name="Title"> Titulo </string>
+    <string name="Description"> Descripcion </string>
+    <string name="Btn_calendar">Fecha</string>
+    <string name="Date"> 00/00/0000</string>
+    <string name="State"> Incompleto </string>
+
+    <!--    MENU-->
+    <string name="Add_NoteDB">Añadir</string>
+    <string name="Update_Note_BD">Subir</string>
+    <string name="Empty_all_notes">Borrar todas las notas</string>
+    <string name="Filter_Notes">Filtrar notas</string>
+    <string name="Profile_User">Perfil</string>
+    <string name="Configuration">Configuracion</string>
+    <string name="Update_Password">Actualizar contraseña</string>
+    <string name="Add_contact">Añadir contacto</string>
+    <string name="Calendar">Calendario</string>
+    <string name="EmptyContacts">Borrar todos los contactos</string>
+    <string name="Search_Contact">Buscar contacto</string>
+
+    <!--    ITEM NOTE-->
+    <string name="Id_note_Item">Nota Id</string>
+    <string name="Uid_User_Item">Id usuario</string>
+    <string name="Mail_User_Item">Email del usuario</string>
+    <string name="Date_register_hour_Item">Fecha y hora de registro</string>
+    <string name="Title_Item"> Titulo </string>
+    <string name="Description_Item"> Descripcion </string>
+    <string name="Date_Item"> 00/00/0000</string>
+    <string name="State_Item"> Incompleto </string>
+
+    <!--    ITEM NOTA IMPORTANT-->
+    <string name="Id_note_Item_I">Id nota</string>
+    <string name="Uid_User_Item_I">Uid usuario</string>
+    <string name="Mail_User_Item_I">Email Usuario</string>
+    <string name="Date_register_hour_Item_I">Fecha y hora de registro</string>
+    <string name="Title_Item_I"> Titulo </string>
+    <string name="Description_Item_I"> Descripcion </string>
+    <string name="Date_Item_I"> 00/00/0000</string>
+    <string name="State_Item_I"> Incompleto </string>
+
+    <!--    ITEM CONTACT -->
+    <string name="Id_C_Item">Id contactos</string>
+    <string name="Uid_C_Item">Usuario uid</string>
+    <string name="Names_C_Item">Nombres</string>
+    <string name="LastName_C_Item">Apellido</string>
+    <string name="Mail_C_Item">Mail</string>
+    <string name="Phone_C_Item">Telefono</string>
+    <string name="Age_C_Item">Edad</string>
+    <string name="Home_C_Item">Direccion</string>
+
+
+    <!--    DIALOG BOX-->
+    <string name="ChooseOptionTXT">Seleccionar</string>
+    <string name="CD_Delete">Eliminar</string>
+    <string name="CD_Update">Actualizar</string>
+
+    <!--    DIALOG BOX DELETE IMPORTANT NOTE-->
+    <string name="DeleteImportantNoteTXT">Eliminar nota importante de la lista?</string>
+    <string name="DeleteNote">Eliminar</string>
+    <string name="DeleteNoteCancel">Cancelar</string>
+
+    <!--    DIALOG BOX ESTABLISH PHONE-->
+    <string name="Establish_Phone">Escribe tu numero</string>
+    <string name="Btn_Accept_phone">Aceptar</string>
+
+    <!--    DIALOG BOX CHOOSE IMAGE-->
+    <string name="ChooseImageTxt">Selecciona la ruta</string>
+    <string name="Btn_ChooseGallery">Galeria</string>
+    <string name="Btn_ChooseCamera">Camara</string>
+
+    <!--    DIALOG BOX VALIDATE REGISTER CONTACT-->
+    <string name="ValidateTXT">Nombre requerido</string>
+    <string name="Btn_Validate_register_C">OK</string>
+
+    <!--    DIALOG BOX CONTACT OPTIONS-->
+    <string name="ChooseOptionContactTXT">Configuracion de contactos</string>
+    <string name="Btn_delete_Contact">Eliminar</string>
+    <string name="Btn_Update_Contact">Actualizar</string>
+
+    <!--    DIALOG BOX FILTER NOTES-->
+    <string name="Filter_NotesTXT">Filtrar notas:</string>
+    <string name="All_Notes">Todo</string>
+    <string name="Finished_notes">Terminado</string>
+    <string name="Notes_NotFinished">No terminado</string>
+
+    <!--    DIALOG BOX AUTHENTICATION-->
+    <string name="ImportantTXT_Auth">Leer por favor</string>
+    <string name="MessageTXT_Auth">Para eliminar tu cuenta primero debes cerrar sesion, luego esperar 5 minutos volver a iniciar sesion y borrar la cuenta.</string>
+    <string name="Btn_Okay_Auth">Okay</string>
+    <string name="Btn_Logout_Auth">Cerrar sesion</string>
+
+    <!--    DIALOG BOX SHOW DATE-->
+    <string name="TXT_Today">Hoy</string>
+    <string name="Today"> -- </string>
+    <string name="Btn_close">Cerrar</string>
+
+    <!--    DIALOG VERIFIED ACCOUNT-->
+    <string name="Verified_Account_TXT">Cuenta verificada</string>
+    <string name="Understood_Verified">Entendido</string>
+
+
+    <!--    UPDATE NOTES-->
+    <string name="Id_Note_Update">Id de la nota</string>
+    <string name="Uid_User_Update">Uid del usuario</string>
+    <string name="Mail_User_Update">Email del usuario</string>
+    <string name="Date_Register_Update">Fecha de registro</string>
+    <string name="Title_Update"> Titulo </string>
+    <string name="Description_Update"> Descripcion </string>
+    <string name="Btn_calendar_Update">Calendario</string>
+    <string name="Date_Update"> 00/00/0000</string>
+    <string name="State_Update">Incompleto</string>
+    <string name="New_State"> -- </string>
+
+    <!--    SPINNER-->
+    <string-array name="Notes_states">
+        <item>"Not finished"</item>
+        <item>"finished"</item>
+    </string-array>
+
+    <!--    NOTA DETAILED-->
+    <string name="Id_Note_Detail_TXT">Id de la nota: </string>
+    <string name="Id_Note_Detail">Id nota</string>
+    <string name="Uid_User_Detail_TXT">Uid usuario: </string>
+    <string name="Uid_User_Detail">Uid usuario</string>
+    <string name="Mail_User_Detail_TXT">Usuario mail: </string>
+    <string name="Mail_User_Detail">Mail user</string>
+    <string name="Title_Detail_TXT">Titulo: </string>
+    <string name="Title_Detail">Titulo</string>
+    <string name="Description_Detail_TXT">Descripcion: </string>
+    <string name="Description_Detail">Descripcion</string>
+    <string name="Date_Registration_Detail_TXT">Creacion:</string>
+    <string name="Date_Registration_Detail">Fecha de registro</string>
+    <string name="Date_Note_Detail_TXT">Fecha de la nota: </string>
+    <string name="Date_Note_Detail">Fecha de la nota</string>
+    <string name="State_Note_Detail_TXT">Estado de la nota: </string>
+    <string name="State_Note_Detail">Estado</string>
+    <string name="Btn_Important">Importante</string>
+
+    <!--    USER PROFILE-->
+    <string name="Uid_Profile">Uid</string>
+    <string name="Names_Profile">Nombre</string>
+    <string name="Last_Name_Profile">Apellido</string>
+    <string name="Email_Profile">Mail</string>
+    <string name="Age_Profile">Edad</string>
+    <string name="Phone_Profile">Celular</string>
+    <string name="Home_Profile">Direccion</string>
+    <string name="College_Profile">Estudios</string>
+    <string name="Profession_Profile">Profession</string>
+    <string name="Save_Data">Guardar</string>
+    <string name="Birthdate_Profile">Fecha de nacimiento</string>
+
+    <string name="BtnChooseImage">Seleccionar imagen</string>
+    <string name="BtnUpdateImage">Actualizar</string>
+
+    <!--    CHANGE PASSWORD-->
+    <string name="CurrentPasswordTXT">Contraseña actual: </string>
+    <string name="CurrentPassword"> -- </string>
+    <string name="ETCurrentPassword">Contraseña actual</string>
+    <string name="ETNewPassword">Nueva contraseña</string>
+    <string name="ETRNewPassword">Repetir nueva contraseña</string>
+    <string name="BtnUpdatePassword">Actualizar</string>
+
+    <!--    ADD CONTACT-->
+    <string name="Uid_User_C">My Uid</string>
+    <string name="Names_C">Nombre del contacto</string>
+    <string name="Lastname_C">Apellido</string>
+    <string name="Mail_C">Mail</string>
+    <string name="Phone_C">Celular</string>
+    <string name="Age_C">Edad</string>
+    <string name="Home_C">Direccion</string>
+    <string name="Btn_Save_Contact">Guardar contacto</string>
+
+    <!--    CONTACT DETAIL-->
+    <string name="Id_Contact_D"> -- </string>
+    <string name="Uid_User_D"> -- </string>
+    <string name="Name_Contact_D"> -- </string>
+    <string name="Lastname_Contact_D"> -- </string>
+    <string name="Mail_Contact_D"> -- </string>
+    <string name="Age_Contact_D"> -- </string>
+    <string name="Phone_Contact_D"> -- </string>
+    <string name="Home_Contact_D"> -- </string>
+    <string name="Btn_UpdateContact_D"> -- </string>
+    <string name="Detail_ContactTXT">Contact detail</string>
+    <string name="Call_C">Call</string>
+    <string name="Message_C">Message</string>
+
+    <!--    UPDATE CONTACT-->
+    <string name="Id_Contact_Update"> -- </string>
+    <string name="Uid_Contact_Update"> -- </string>
+    <string name="Name_Contact_Update">Nombre</string>
+    <string name="Lastname_Contact_Update">Apellido</string>
+    <string name="Mail_Contact_Update">Email</string>
+    <string name="Phone_Contact_Update"> - </string>
+    <string name="Age_Contact_Update">Edad</string>
+    <string name="Home_Contact_Update">Direccion</string>
+    <string name="Update_Contact_Update">Actualizar</string>
+
+    <!--    APP INFORMATION-->
+    <string name="Developer">Desarrollado por: Jamiro</string>
+    <string name="MailSupport">devjamiro@gmail.com </string>
+    <string name="Version">Version: 2.1</string>
+    <string name="CloseInfo">Cerrar</string>
+
+    <!--    CONFIGURATIONS-->
+    <string name="Uid_delete">Uid del usuario</string>
+    <string name="DeleteAccount">Borrar cuenta</string>
+
+
+</resources>

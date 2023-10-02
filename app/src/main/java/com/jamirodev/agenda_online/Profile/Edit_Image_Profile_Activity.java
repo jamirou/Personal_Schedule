@@ -91,7 +91,7 @@ public class Edit_Image_Profile_Activity extends AppCompatActivity {
         });
 
         progressDialog = new ProgressDialog(Edit_Image_Profile_Activity.this);
-        progressDialog.setTitle("Please wait");
+        progressDialog.setTitle("Por favor espere");
         progressDialog.setCanceledOnTouchOutside(false);
 
         ReadImage();
@@ -155,7 +155,7 @@ public class Edit_Image_Profile_Activity extends AppCompatActivity {
                     @Override
                     public void onSuccess(Void unused) {
                         progressDialog.dismiss();
-                        Toast.makeText(Edit_Image_Profile_Activity.this, "Uploated image", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Edit_Image_Profile_Activity.this, "Imagen actualizada", Toast.LENGTH_SHORT).show();
                         onBackPressed();
                     }
                 }).addOnFailureListener(new OnFailureListener() {

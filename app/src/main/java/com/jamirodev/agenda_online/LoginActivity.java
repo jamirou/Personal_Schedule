@@ -54,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
         progressDialog = new ProgressDialog(LoginActivity.this);
-        progressDialog.setTitle("Please wait");
+        progressDialog.setTitle("Por favor espere");
         progressDialog.setCanceledOnTouchOutside(false);
 
         Btn_login.setOnClickListener(new View.OnClickListener() {
@@ -76,9 +76,9 @@ public class LoginActivity extends AppCompatActivity {
         password = PassLogin.getText().toString();
 
         if (!Patterns.EMAIL_ADDRESS.matcher(mail).matches()) {
-            Toast.makeText(this, "Invalid mail", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Email invalido", Toast.LENGTH_SHORT).show();
         } else if (TextUtils.isEmpty(password)) {
-            Toast.makeText(this, "Enter password", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Pon una contraseña", Toast.LENGTH_SHORT).show();
         } else {
             LoginUser();
         }
@@ -96,7 +96,7 @@ public class LoginActivity extends AppCompatActivity {
                             progressDialog.dismiss();
                             FirebaseUser user = firebaseAuth.getCurrentUser();
                             startActivity(new Intent(LoginActivity.this, MainMenuActivity.class));
-                            Toast.makeText(LoginActivity.this, "Welcome back " + user.getEmail(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "Bienvenida" + user.getEmail(), Toast.LENGTH_SHORT).show();
                             finish();
                         }
                         else{

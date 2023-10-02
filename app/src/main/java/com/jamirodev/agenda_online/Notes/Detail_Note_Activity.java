@@ -139,7 +139,7 @@ public class Detail_Note_Activity extends AppCompatActivity {
                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void unused) {
-                            Toast.makeText(Detail_Note_Activity.this, "Added as important", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Detail_Note_Activity.this, "Añadida como importante", Toast.LENGTH_SHORT).show();
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
@@ -163,7 +163,7 @@ public class Detail_Note_Activity extends AppCompatActivity {
                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void unused) {
-                            Toast.makeText(Detail_Note_Activity.this, "Note deleted from important", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Detail_Note_Activity.this, "Nota eliminada de importantes", Toast.LENGTH_SHORT).show();
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
@@ -188,11 +188,11 @@ public class Detail_Note_Activity extends AppCompatActivity {
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             CheckImportantNote = snapshot.exists();
                             if (CheckImportantNote) {
-                                String important = "Important";
+                                String important = "Importante";
                                 Btn_Important.setCompoundDrawablesRelativeWithIntrinsicBounds(0, R.drawable.ic_note_important, 0, 0);
                                 Btn_Important.setText(important);
                             }else {
-                                String no_important = "Not important";
+                                String no_important = "No importante";
                                 Btn_Important.setCompoundDrawablesRelativeWithIntrinsicBounds(0, R.drawable.ic_note_not_important, 0, 0);
                                 Btn_Important.setText(no_important);
                             }

@@ -102,7 +102,7 @@ public class Update_Contact_Activity extends AppCompatActivity {
         });
 
         progressDialog = new ProgressDialog(Update_Contact_Activity.this);
-        progressDialog.setTitle("Please wait");
+        progressDialog.setTitle("Por favor espere");
         progressDialog.setCanceledOnTouchOutside(false);
 
     }
@@ -228,7 +228,7 @@ public class Update_Contact_Activity extends AppCompatActivity {
     }
 
     private void UploadImageStorage() {
-        progressDialog.setMessage("Uploading image");
+        progressDialog.setMessage("Subiendo imagen");
         progressDialog.show();
         String id_c = getIntent().getStringExtra("id_c");
 

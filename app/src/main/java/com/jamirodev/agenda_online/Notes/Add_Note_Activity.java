@@ -153,11 +153,11 @@ public class Add_Note_Activity extends AppCompatActivity {
 
             assert id_Note != null;
             DB_Firebase.child(user.getUid()).child(Name_DB).child(id_Note).setValue(note);
-            Toast.makeText(this, "Successfully added note", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Nota añadida exitosamente", Toast.LENGTH_SHORT).show();
             onBackPressed();
         }
         else {
-            Toast.makeText(this, "Fill all fields", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Rellena todos los campos", Toast.LENGTH_SHORT).show();
         }
 
     }

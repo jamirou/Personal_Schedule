@@ -57,7 +57,7 @@ public class RecordActivity extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
 
         progressDialog = new ProgressDialog(RecordActivity.this);
-        progressDialog.setTitle("Please wait");
+        progressDialog.setTitle("Por favor espere");
         progressDialog.setCanceledOnTouchOutside(false);
 
         RegisterUser.setOnClickListener(new View.OnClickListener() {
@@ -82,15 +82,15 @@ public class RecordActivity extends AppCompatActivity {
         confirmpassword = ConfirmPasswordEt.getText().toString();
 
         if (TextUtils.isEmpty(name)) {
-            Toast.makeText(this, "Please set name", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Pon tu nombre por favor", Toast.LENGTH_SHORT).show();
         } else if (!Patterns.EMAIL_ADDRESS.matcher(gmail).matches()) {
-            Toast.makeText(this, "Please set gmail", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Por favor pon tu correo", Toast.LENGTH_SHORT).show();
         } else if (TextUtils.isEmpty(password)) {
-            Toast.makeText(this, "Please set password", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Por favor pon una contraseña", Toast.LENGTH_SHORT).show();
         } else if (TextUtils.isEmpty(confirmpassword)) {
-            Toast.makeText(this, "Please confirm password", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Confirma la contraseña", Toast.LENGTH_SHORT).show();
         } else if (!password.equals(confirmpassword)) {
-            Toast.makeText(this, "the passwords do not match", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Las contraseñas no cinciden", Toast.LENGTH_SHORT).show();
             
         } else {
             CreateAccount();
@@ -148,7 +148,7 @@ public class RecordActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(Void unused) {
                         progressDialog.dismiss();
-                        Toast.makeText(RecordActivity.this, "Account created successfully", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RecordActivity.this, "Cuenta creada exitosamente", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(RecordActivity.this, MainMenuActivity.class));
                         finish();
                     }

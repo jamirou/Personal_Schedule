@@ -82,7 +82,7 @@ public class Update_Password_Activity extends AppCompatActivity {
     private void Update_Password(String actualPassword, String newPassword) {
         progressDialog.show();
         progressDialog.setTitle("Updating");
-        progressDialog.setMessage("Please wait");
+        progressDialog.setMessage("Por favor espere");
 
         AuthCredential authCredential = EmailAuthProvider.getCredential(user.getEmail(), actualPassword);
         user.reauthenticate(authCredential)
@@ -102,7 +102,7 @@ public class Update_Password_Activity extends AppCompatActivity {
                                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                                                     @Override
                                                     public void onSuccess(Void unused) {
-                                                        Toast.makeText(Update_Password_Activity.this, "Changes applied", Toast.LENGTH_SHORT).show();
+                                                        Toast.makeText(Update_Password_Activity.this, "Cambios aplicados", Toast.LENGTH_SHORT).show();
                                                         firebaseAuth.signOut();
                                                         Intent intent = new Intent(Update_Password_Activity.this, LoginActivity.class)
                                                                 .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)

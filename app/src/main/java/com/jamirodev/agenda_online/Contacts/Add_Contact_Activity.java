@@ -40,7 +40,7 @@ public class Add_Contact_Activity extends AppCompatActivity {
 
         ActionBar actionBar = getSupportActionBar();
         assert actionBar != null;
-        actionBar.setTitle("Add contact");
+        actionBar.setTitle("Añadir contacto");
         actionBar.setDisplayShowHomeEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);
 

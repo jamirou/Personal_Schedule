@@ -421,9 +421,9 @@ public class List_Notes_Activity extends AppCompatActivity {
 
     private void DeleteNote(String idNote) {
         AlertDialog.Builder builder = new AlertDialog.Builder(List_Notes_Activity.this);
-        builder.setTitle("Delete Note");
-        builder.setMessage("Are you sure you want to delete it?");
-        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+        builder.setTitle("Eliminar nota");
+        builder.setMessage("Estas segura de que quieres eliminar la nota?");
+        builder.setPositiveButton("Si", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
 //                DELETE NOTE FROM DB
@@ -435,7 +435,7 @@ public class List_Notes_Activity extends AppCompatActivity {
                         for (DataSnapshot ds : snapshot.getChildren()) {
                             ds.getRef().removeValue();
                         }
-                        Toast.makeText(List_Notes_Activity.this, "Note deleted", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(List_Notes_Activity.this, "Nota eliminada", Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
@@ -459,8 +459,8 @@ public class List_Notes_Activity extends AppCompatActivity {
 
     private void Empty_Notes_Register() {
         AlertDialog.Builder builder = new AlertDialog.Builder(List_Notes_Activity.this);
-        builder.setTitle("Empty Notes");
-        builder.setMessage("Do you want to delete all notes?");
+        builder.setTitle("Eliminar notas");
+        builder.setMessage("Quieres eliminar todas tus notas?");
 
         builder.setPositiveButton("yes", new DialogInterface.OnClickListener() {
             @Override
@@ -473,7 +473,7 @@ public class List_Notes_Activity extends AppCompatActivity {
                         for (DataSnapshot ds : snapshot.getChildren()){
                             ds.getRef().removeValue();
                         }
-                        Toast.makeText(List_Notes_Activity.this, "All notes have been removed", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(List_Notes_Activity.this, "Todas las notas han sido eliminadas", Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
@@ -488,7 +488,7 @@ public class List_Notes_Activity extends AppCompatActivity {
         builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                Toast.makeText(List_Notes_Activity.this, "Operation canceled by user", Toast.LENGTH_SHORT).show();
+                Toast.makeText(List_Notes_Activity.this, "Operacion cancelada por el usuario", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -540,7 +540,7 @@ public class List_Notes_Activity extends AppCompatActivity {
                 editor.putString("List", "All");
                 editor.apply();
                 recreate();
-                Toast.makeText(List_Notes_Activity.this, "All notes", Toast.LENGTH_SHORT).show();
+                Toast.makeText(List_Notes_Activity.this, "Todas las notas", Toast.LENGTH_SHORT).show();
                 dialog_filter.dismiss();
             }
         });
@@ -552,7 +552,7 @@ public class List_Notes_Activity extends AppCompatActivity {
                 editor.putString("List", "finished");
                 editor.apply();
                 recreate();
-                Toast.makeText(List_Notes_Activity.this, "finished notes", Toast.LENGTH_SHORT).show();
+                Toast.makeText(List_Notes_Activity.this, "Notas eliminadas", Toast.LENGTH_SHORT).show();
                 dialog_filter.dismiss();
             }
         });
@@ -564,7 +564,7 @@ public class List_Notes_Activity extends AppCompatActivity {
                 editor.putString("List", "Not finished");
                 editor.apply();
                 recreate();
-                Toast.makeText(List_Notes_Activity.this, "Notes not finished", Toast.LENGTH_SHORT).show();
+                Toast.makeText(List_Notes_Activity.this, "Notas no terminadas", Toast.LENGTH_SHORT).show();
                 dialog_filter.dismiss();
             }
         });
