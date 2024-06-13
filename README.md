@@ -1,41 +1,44 @@
-# Personal Schedule 
+# Personal Schedule
 
-Este proyecto de Android es una aplicación de agenda avanzada que incorpora una serie de características y conceptos de programación relevantes. A continuación, se detallan las características clave que destacan en esta aplicación:
+This Android project is an advanced agenda application that incorporates a variety of relevant programming concepts and features. Below are the key characteristics that stand out in this application:
 
-## Características Principales
+## Key Features
 
-- Aplicación Android basada en programación orientada a objetos (POO).
-- Implementación de sólida validación de datos para garantizar la integridad de la información.
-- Integración de Firebase como backend para el almacenamiento de datos en la nube.
-- Carga y sincronización de datos en tiempo real desde Firebase, garantizando una experiencia en tiempo real para los usuarios.
-- Implementación completa de operaciones CRUD (Crear, Leer, Actualizar y Borrar) para gestionar las notas.
-- Registro seguro de usuarios con autenticación.
-- Autenticación y verificación de usuarios a través de correo electrónico para garantizar la seguridad de la cuenta.
-- Capacidad de edición de información de usuario, brindando flexibilidad a los usuarios.
-- Listado de notas en un diseño eficiente y atractivo.
-- Funcionalidad de búsqueda para facilitar el acceso a registros específicos.
-- Transferencia y recuperación de datos entre la aplicación y el servidor de forma eficiente.
-- Configuración personalizable del perfil del usuario para adaptarse a las preferencias individuales.
-- Manejo de estados avanzado para notas, lo que permite una gestión más eficaz.
-- Control de permisos detallado para la interacción con funciones específicas.
-- Gestión de archivos multimedia, incluida la selección de imágenes desde la Galería.
-- Selector de código telefónico por país para la entrada de números de teléfono.
-- Integración de imágenes desde la galería del dispositivo o captura de fotografías desde la cámara.
-- Subida y descarga de imágenes desde el servidor de Firebase.
-- Operaciones de creación, lectura, actualización y eliminación de contactos.
-- Facilitación de llamadas telefónicas y envío de mensajes SMS desde la aplicación.
-- Uso de iconos y animaciones con Lottie para una interfaz de usuario atractiva.
-- Implementación de menús contextuales y acciones de usuario.
-- Diseño de pantalla utilizando elementos XML, incluyendo LinearLayout, RelativeLayout y CardView.
-- Pantallas diseñadas de acuerdo con las mejores prácticas de diseño de interfaces.
-- Incorporación de un calendario para la visualización y programación de eventos.
-- Implementación de RecyclerView para la presentación eficiente de datos.
-- Personalización de fuentes de letra para un estilo distintivo.
-- Utilización de ActionBar para una navegación intuitiva.
-- Integración de spinners para una selección de opciones más eficiente.
-- Control avanzado de estados de red para mantener la conectividad.
-- Implementación de cuadros de diálogos personalizados para mejorar la experiencia del usuario.
+| Feature                                                                 | Description                                                                                                                                       |
+|------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
+| Object-Oriented Programming (OOP)                                      | Android application based on OOP principles.                                                                                                      |
+| Robust Data Validation                                                 | Ensures data integrity through strong validation mechanisms.                                                                                      |
+| Firebase Integration                                                   | Utilizes Firebase as the backend for cloud data storage.                                                                                          |
+| Real-Time Data Synchronization                                         | Real-time data loading and synchronization from Firebase, ensuring a seamless user experience.                                                    |
+| Full CRUD Operations                                                   | Comprehensive CRUD operations (Create, Read, Update, Delete) for managing notes.                                                                  |
+| Secure User Registration                                               | Secure user registration with authentication.                                                                                                     |
+| Email Authentication and Verification                                  | Ensures account security through email verification.                                                                                              |
+| User Information Editing                                               | Allows users to edit their information, providing flexibility.                                                                                    |
+| Efficient and Attractive Note Listing                                  | Displays notes in an efficient and visually appealing manner.                                                                                     |
+| Search Functionality                                                   | Facilitates easy access to specific records through a search feature.                                                                             |
+| Efficient Data Transfer                                                | Enables efficient data transfer and retrieval between the app and the server.                                                                     |
+| Customizable User Profile                                              | Provides customizable user profile settings to suit individual preferences.                                                                       |
+| Advanced Note State Management                                         | Advanced state management for notes, allowing for more effective handling.                                                                        |
+| Detailed Permission Control                                            | Detailed permission control for interacting with specific functions.                                                                              |
+| Multimedia File Management                                             | Manages multimedia files, including image selection from the Gallery.                                                                             |
+| Country Code Picker                                                    | Country code picker for phone number entry.                                                                                                       |
+| Image Integration                                                      | Integrates images from the device gallery or captures photos using the camera.                                                                    |
+| Image Upload and Download                                              | Allows image upload and download from Firebase server.                                                                                            |
+| Contact Management                                                     | CRUD operations for managing contacts.                                                                                                            |
+| Phone Call Facilitation and SMS Sending                                | Enables phone calls and SMS sending directly from the app.                                                                                        |
+| Lottie Animations                                                      | Uses Lottie animations for an attractive user interface.                                                                                          |
+| Context Menus and User Actions                                         | Implements context menus and user actions.                                                                                                        |
+| XML-Based Screen Design                                                | Screen design using XML elements, including LinearLayout, RelativeLayout, and CardView.                                                           |
+| Best Practice Interface Design                                         | Screens designed according to best interface design practices.                                                                                    |
+| Calendar Integration                                                   | Incorporates a calendar for event viewing and scheduling.                                                                                         |
+| RecyclerView Implementation                                            | Uses RecyclerView for efficient data presentation.                                                                                                |
+| Custom Font Styles                                                     | Customizes font styles for a distinctive look.                                                                                                     |
+| ActionBar Utilization                                                   | Utilizes ActionBar for intuitive navigation.                                                                                                       |
+| Spinner Integration                                                    | Integrates spinners for efficient option selection.                                                                                               |
+| Advanced Network State Control                                         | Advanced network state control to maintain connectivity.                                                                                          |
+| Custom Dialog Boxes                                                    | Implements custom dialog boxes to enhance user experience.                                                                                        |
 
+This project highlights my ability to integrate complex features into a seamless and user-friendly Android application.
 ## Capturas de la app:
 <img src="https://github.com/jamirou/Personal_Schedule/assets/48457084/f313942e-bb6d-44b9-9141-1a7771e5532e" width="320" height="700"> <img src="https://github.com/jamirou/Personal_Schedule/assets/48457084/1315b4df-9ad5-44db-bc3d-6ef4f8172fc8" width="400" height="700">
 
