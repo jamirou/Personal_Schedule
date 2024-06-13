@@ -39,7 +39,7 @@ This Android project is an advanced agenda application that incorporates a varie
 | Custom Dialog Boxes                                                    | Implements custom dialog boxes to enhance user experience.                                                                                        |
 
 This project highlights my ability to integrate complex features into a seamless and user-friendly Android application.
-## Capturas de la app:
+## Captures:
 <img src="https://github.com/jamirou/Personal_Schedule/assets/48457084/f313942e-bb6d-44b9-9141-1a7771e5532e" width="320" height="700"> <img src="https://github.com/jamirou/Personal_Schedule/assets/48457084/1315b4df-9ad5-44db-bc3d-6ef4f8172fc8" width="400" height="700">
 
 
